@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from 'react';
  * Lightweight Intersection Observer hook for performant scroll-triggered animations.
  * Runs on GPU-accelerated CSS classes with zero lag.
  */
-export const useInView = (options = { threshold: 0.15, triggerOnce: true }) => {
+export const useInView = (options = {}) => {
+  const { threshold = 0.05, rootMargin = '0px', triggerOnce = true } = options;
   const [inView, setInView] = useState(false);
   const ref = useRef(null);
 
@@ -21,20 +22,20 @@ export const useInView = (options = { threshold: 0.15, triggerOnce: true }) => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setInView(true);
-        if (options.triggerOnce) {
+        if (triggerOnce) {
           observer.unobserve(element);
         }
-      } else if (!options.triggerOnce) {
+      } else if (!triggerOnce) {
         setInView(false);
       }
-    }, options);
+    }, { threshold, rootMargin });
 
     observer.observe(element);
 
     return () => {
       if (element) observer.unobserve(element);
     };
-  }, [options.threshold, options.triggerOnce]);
+  }, [threshold, rootMargin, triggerOnce]);
 
   return [ref, inView];
 };

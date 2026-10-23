@@ -6,11 +6,13 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: "401(k) Plan Correction & Compliance",
-      client: "Principal Financial Group",
-      image: "/images/projects/project-1.png",
-      category: "Finance & ERISA",
-      url: "Retirement Operations",
+      title: "Role of AI in Sports Analytics",
+      client: "Research Paper",
+      image: "/images/projects/project-3.png",
+      category: "Python, ML & Tableau",
+      url: "Predictive Analytics",
+      description:
+        "Investigated AI applications for athletic performance tracking, strategy optimization, and decision-making. Developed predictive models in Python and created visual dashboards with Matplotlib, Seaborn, and Tableau.",
     },
     {
       id: 2,
@@ -20,14 +22,18 @@ export const portfolioData = {
       category: "Agency Platform",
       url: "onedaystudio.in",
       featured: true,
+      description:
+        "Partnering with founder Gourav Raut to deliver modern digital solutions combining speed, quality, and creativity. Bridging data analytics, business operations, and automated AI workflows.",
     },
     {
       id: 3,
-      title: "Business Analytics & Visual Dashboards",
-      client: "GITAM University",
-      image: "/images/projects/project-3.png",
-      category: "Power BI & SQL",
-      url: "Data Modeling",
+      title: "401(k) Plan Correction & Compliance",
+      client: "Principal Financial Group",
+      image: "/images/projects/project-1.png",
+      category: "Finance & ERISA",
+      url: "Retirement Operations",
+      description:
+        "Specialized operations in 401(k) plan correction, ERISA compliance, vesting audits, and complex beneficiary investment reallocations.",
     },
   ],
   visionBanner: {

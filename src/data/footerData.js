@@ -3,6 +3,7 @@ export const footerData = {
     { label: "Home", href: "/", active: true },
     { label: "About Me", href: "#about" },
     { label: "Experience", href: "#services" },
+    { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#portfolio" },
     { label: "Insights", href: "#blog" },
     {

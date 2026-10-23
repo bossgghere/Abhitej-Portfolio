@@ -6,6 +6,7 @@ export const navigationData = {
   navLinks: [
     { label: "About Me", href: "#about", path: "/about" },
     { label: "Experience", href: "#services", path: "/services" },
+    { label: "Skills", href: "#skills", path: "/skills" },
     { label: "Projects", href: "#portfolio", path: "/portfolio" },
     { label: "Insights", href: "#blog", path: "/blog" },
   ],

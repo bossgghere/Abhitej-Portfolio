@@ -12,6 +12,8 @@ export const experienceData = {
       period: "Jul 2026 - Present",
       role: "Financial Analyst – 401(k) Retirement Plan Correction Team",
       tags: ["401(k) Plans", "ERISA"],
+      description:
+        "Specializing in researching and resolving complex 401(k) plan errors, transaction discrepancies, and vesting validations ensuring strict regulatory ERISA compliance.",
     },
     {
       id: "principal-trainee",
@@ -19,6 +21,8 @@ export const experienceData = {
       period: "Jun 2025 - Jun 2026",
       role: "Trainee Analyst – Process Specialist (Rising Star Award)",
       tags: ["Beneficiary Ops", "Quality Check"],
+      description:
+        "Honored with the Rising Star Award for zero-error accuracy. Managed participant maintenance, date-of-death validations, and high-stakes beneficiary investment allocations.",
     },
     {
       id: "one-day-studio",
@@ -34,6 +38,15 @@ export const experienceData = {
         "/images/projects/exp-thumb-2.png",
         "/images/projects/exp-thumb-3.png",
       ],
+    },
+    {
+      id: "data-vis-intern",
+      company: "Data Visualisation & Analytics",
+      period: "2024 - 2025",
+      role: "Data Visualisation Analyst and Development Intern",
+      tags: ["Power BI", "Excel Dashboards"],
+      description:
+        "Hands-on data visualization using Excel and Power BI. Built executive dashboards to communicate business insights, analyze financial trends, and support strategic forecasting.",
     },
     {
       id: "aps-bolaram",

@@ -111,39 +111,58 @@ export const ExperienceSection = () => {
                 </div>
 
                 {/* Expanded Details */}
-                {isExpanded && exp.images && (
+                {isExpanded && (
                   <div className="mt-8 pt-6 border-t border-[#E8E8E8] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center animate-fade-in duration-300">
                     
-                    {/* 3 Project Thumbnails */}
-                    <div className="lg:col-span-6 grid grid-cols-3 gap-3">
-                      {exp.images.map((imgSrc, idx) => (
-                        <div
-                          key={idx}
-                          className="group/thumb rounded-xl overflow-hidden aspect-[4/3] bg-[#E8E8E8] shadow-sm hover:shadow-md transition-shadow"
-                        >
-                          <img
-                            src={imgSrc}
-                            alt={`${exp.company} thumbnail ${idx + 1}`}
-                            loading="lazy"
-                            className="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"
-                          />
+                    {exp.images ? (
+                      <>
+                        {/* 3 Project Thumbnails */}
+                        <div className="lg:col-span-6 grid grid-cols-3 gap-3">
+                          {exp.images.map((imgSrc, idx) => (
+                            <div
+                              key={idx}
+                              className="group/thumb rounded-xl overflow-hidden aspect-[4/3] bg-[#E8E8E8] shadow-sm hover:shadow-md transition-shadow"
+                            >
+                              <img
+                                src={imgSrc}
+                                alt={`${exp.company} thumbnail ${idx + 1}`}
+                                loading="lazy"
+                                className="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"
+                              />
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
 
-                    {/* Description Paragraph */}
-                    <div className="lg:col-span-4">
-                      <p className="text-xs sm:text-sm text-[#7B7B7B] leading-relaxed">
-                        {exp.description}
-                      </p>
-                    </div>
+                        {/* Description Paragraph */}
+                        <div className="lg:col-span-4">
+                          <p className="text-xs sm:text-sm text-[#7B7B7B] leading-relaxed">
+                            {exp.description}
+                          </p>
+                        </div>
 
-                    {/* Action Arrow Button */}
-                    <div className="lg:col-span-2 flex justify-start lg:justify-end">
-                      <div className="w-14 h-14 rounded-full bg-[#222222] text-white flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 shadow-md">
-                        <ArrowUpRight className="w-6 h-6" />
+                        {/* Action Arrow Button */}
+                        <div className="lg:col-span-2 flex justify-start lg:justify-end">
+                          <div className="w-14 h-14 rounded-full bg-[#222222] text-white flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 shadow-md">
+                            <ArrowUpRight className="w-6 h-6" />
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <div className="lg:col-span-12 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <p className="text-xs sm:text-sm text-[#7B7B7B] leading-relaxed max-w-3xl">
+                          {exp.description}
+                        </p>
+                        <a
+                          href={ctaLink}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="shrink-0 inline-flex items-center gap-1 text-xs font-medium text-[#222222] hover:text-[#7B7B7B] transition-colors"
+                        >
+                          <span>Learn more</span>
+                          <ArrowUpRight className="w-3.5 h-3.5" />
+                        </a>
                       </div>
-                    </div>
+                    )}
                   </div>
                 )}
               </div>
