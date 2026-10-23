@@ -160,7 +160,7 @@ export const AboutSection = () => {
             <span>•</span>
             <span>AI in Sports Analytics</span>
             <span>•</span>
-            <span>One Day Studio</span>
+            <span>Data Visualisation Dashboards</span>
             <span>•</span>
             <span>Power BI & DAX</span>
             <span>•</span>
@@ -180,7 +180,7 @@ export const AboutSection = () => {
             <span>•</span>
             <span>AI in Sports Analytics</span>
             <span>•</span>
-            <span>One Day Studio</span>
+            <span>Data Visualisation Dashboards</span>
           </div>
         </div>
       </div>

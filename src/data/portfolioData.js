@@ -16,14 +16,14 @@ export const portfolioData = {
     },
     {
       id: 2,
-      title: "One Day Studio | Modern Agency",
-      client: "One Day Studio",
+      title: "Executive Financial Dashboards & Forecasting",
+      client: "Business Analytics",
       image: "/images/projects/project-2.png",
-      category: "Agency Platform",
-      url: "onedaystudio.in",
+      category: "Power BI & Excel",
+      url: "Executive Reporting",
       featured: true,
       description:
-        "Partnering with founder Gourav Raut to deliver modern digital solutions combining speed, quality, and creativity. Bridging data analytics, business operations, and automated AI workflows.",
+        "Designed impactful executive dashboards and visual reports in Excel and Power BI to analyze financial trends, track business performance, and drive strategic forecasting.",
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ export const portfolioData = {
   visionBanner: {
     title: "Looking for an Analytical Mind to Drive Impact?",
     subtitle:
-      "I'm always excited to collaborate on data-driven business challenges, financial operations, and analytics-first agency projects.",
+      "I'm always excited to collaborate on data-driven business challenges, financial operations, and advanced analytics initiatives.",
     ctaText: "Connect on LinkedIn",
     ctaLink: "https://www.linkedin.com/in/abhitej-kumar-8b5b19286/",
   },

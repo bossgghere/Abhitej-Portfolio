@@ -25,35 +25,19 @@ export const experienceData = {
         "Honored with the Rising Star Award for zero-error accuracy. Managed participant maintenance, date-of-death validations, and high-stakes beneficiary investment allocations.",
     },
     {
-      id: "one-day-studio",
-      company: "One Day Studio, Modern Agency",
-      period: "2025 - Present",
-      role: "Business Analytics & Growth Partner (onedaystudio.in)",
-      tags: ["AI Solutions", "Analytics"],
-      expanded: true,
-      description:
-        "Partnering with founder Gourav Raut to deliver modern digital solutions combining speed, quality, and creativity. Bridging data analytics, business operations, and automated AI workflows.",
-      images: [
-        "/images/projects/exp-thumb-1.png",
-        "/images/projects/exp-thumb-2.png",
-        "/images/projects/exp-thumb-3.png",
-      ],
-    },
-    {
       id: "data-vis-intern",
       company: "Data Visualisation & Analytics",
       period: "2024 - 2025",
       role: "Data Visualisation Analyst and Development Intern",
       tags: ["Power BI", "Excel Dashboards"],
+      expanded: true,
       description:
         "Hands-on data visualization using Excel and Power BI. Built executive dashboards to communicate business insights, analyze financial trends, and support strategic forecasting.",
-    },
-    {
-      id: "aps-bolaram",
-      company: "Army Public School (APS) Bolaram",
-      period: "2020 - 2022",
-      role: "Intermediate (10+2) – Mathematics, Economics, Commerce (80%)",
-      tags: ["Economics", "Finance"],
+      images: [
+        "/images/projects/exp-thumb-1.png",
+        "/images/projects/exp-thumb-2.png",
+        "/images/projects/exp-thumb-3.png",
+      ],
     },
   ],
 };

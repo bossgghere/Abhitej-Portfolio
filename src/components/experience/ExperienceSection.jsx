@@ -8,12 +8,12 @@ import { useInView } from '@/hooks/useInView';
  * Recreates the exact layout from reference screenshot "experience section.jpeg":
  * - "● Experiences" pill & "Explore My Professional Journey" header
  * - Divided rows with company, period, role, and pill tags
- * - Interactive expandable item (One Day Studio) with 3 thumbnails & circular arrow
+ * - Interactive expandable item with 3 thumbnails & circular arrow
  */
 export const ExperienceSection = () => {
   const { badge, title, description, ctaText, ctaLink, experiences } = experienceData;
 
-  const [expandedId, setExpandedId] = useState('one-day-studio');
+  const [expandedId, setExpandedId] = useState('data-vis-intern');
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   const toggleExpand = (id) => {
