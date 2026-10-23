@@ -1,8 +1,8 @@
 export const navigationData = {
   navLinks: [
     { label: "About Me", href: "#about", path: "/about" },
-    { label: "Experience", href: "#services", path: "/services" },
-    { label: "Projects", href: "#portfolio", path: "/portfolio" },
+    { label: "Experience", href: "#experience", path: "/experience" },
+    { label: "Projects", href: "#projects", path: "/projects" },
     { label: "Achievements", href: "#achievements", path: "/achievements" },
   ],
   ctaButton: {

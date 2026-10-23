@@ -12,6 +12,18 @@ import { navigationData } from '@/data';
 export const Navbar = () => {
   const { navLinks, ctaButton } = navigationData;
 
+  const handleNavClick = (e, href) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const targetId = href.replace('#', '');
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        window.history.replaceState(null, '', href);
+      }
+    }
+  };
+
   return (
     <header className="hidden sm:block relative z-40 w-full bg-[#F8F8F8]/90 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-6 flex items-center justify-between">
@@ -22,6 +34,7 @@ export const Navbar = () => {
             <a
               key={link.label}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="text-sm font-normal text-[#7B7B7B] hover:text-[#222222] transition-colors duration-200"
             >
               {link.label}

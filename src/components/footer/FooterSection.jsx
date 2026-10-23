@@ -11,8 +11,22 @@ import { footerData } from '@/data';
 export const FooterSection = () => {
   const { links, email, phone, location } = footerData;
 
+  const handleLinkClick = (e, href) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const targetId = href.replace('#', '');
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        window.history.replaceState(null, '', href);
+      }
+    }
+  };
+
   return (
-    <footer id="footer" className="relative bg-[#222222] text-white py-14 sm:py-16 px-6 sm:px-10 lg:px-14 overflow-hidden border-t border-[#333333]">
+    <footer id="contact" className="relative bg-[#222222] text-white py-14 sm:py-16 px-6 sm:px-10 lg:px-14 overflow-hidden border-t border-[#333333]">
+      {/* Backward-compatibility anchor for legacy links */}
+      <span id="footer" className="absolute -top-10" />
       
       {/* Subtle architectural wireframe background accents */}
       <div className="absolute inset-0 pointer-events-none opacity-15">
@@ -28,6 +42,7 @@ export const FooterSection = () => {
             <a
               key={link.label}
               href={link.href}
+              onClick={(e) => handleLinkClick(e, link.href)}
               target={link.target || "_self"}
               rel={link.target ? "noreferrer" : undefined}
               className={`text-xs sm:text-sm font-normal px-5 py-2 rounded-full transition-colors duration-200 ${

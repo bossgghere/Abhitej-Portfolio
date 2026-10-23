@@ -17,10 +17,12 @@ export const ExperienceSection = () => {
 
   return (
     <section
-      id="services"
+      id="experience"
       ref={ref}
       className="relative py-14 sm:py-18 px-6 sm:px-10 lg:px-14 border-t border-[#E8E8E8] bg-[#F8F8F8]"
     >
+      {/* Backward-compatibility anchor for legacy links */}
+      <span id="services" className="absolute -top-10" />
       <div className="max-w-7xl mx-auto">
         <div
           className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start transition-all duration-700 ${

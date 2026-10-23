@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react';
 const navItems = [
   { id: 'hero', label: 'Home', index: '00' },
   { id: 'about', label: 'About Me', index: '01' },
-  { id: 'services', label: 'Career & Experience', index: '02' },
-  { id: 'portfolio', label: 'Research & Analytics', index: '03' },
+  { id: 'experience', label: 'Career & Experience', index: '02' },
+  { id: 'projects', label: 'Research & Analytics', index: '03' },
   { id: 'achievements', label: 'Key Achievements', index: '04' },
-  { id: 'footer', label: 'Direct Contact', index: '05' },
+  { id: 'contact', label: 'Direct Contact', index: '05' },
 ];
 
 /**
@@ -14,23 +14,44 @@ const navItems = [
  * Minimal and aesthetic persistent navigation on the right side:
  * - Floating vertical section scrollspy dots dock along the right edge
  * - Allows users to jump directly to any section while scrolling with real-time active indicators
+ * - Dynamically updates URL hash via history.replaceState so the browser bar never stays stuck on #about
  * - Fully responsive: ultra-compact on mobile, expansive with tooltips on desktop
  */
 export const FloatingRightMenu = () => {
   const [activeSection, setActiveSection] = useState('hero');
 
-  // Scrollspy: update active section as user scrolls
+  // Scrollspy & URL hash sync as user scrolls through sections
   useEffect(() => {
+    let timeoutId = null;
+
+    const updateUrlHash = (sectionId) => {
+      if (timeoutId) clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        if (sectionId === 'hero') {
+          if (window.location.hash) {
+            window.history.replaceState(null, '', window.location.pathname + window.location.search);
+          }
+        } else {
+          const newHash = `#${sectionId}`;
+          if (window.location.hash !== newHash) {
+            window.history.replaceState(null, '', newHash);
+          }
+        }
+      }, 80);
+    };
+
     const handleScroll = () => {
-      // If user reaches near bottom of the page, activate footer
+      // If user reaches near bottom of the page, activate contact/footer
       if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 120) {
-        setActiveSection('footer');
+        setActiveSection('contact');
+        updateUrlHash('contact');
         return;
       }
 
-      // If at the very top, activate hero
+      // If at the very top, activate hero and clear any lingering section hash
       if (window.scrollY < 180) {
         setActiveSection('hero');
+        updateUrlHash('hero');
         return;
       }
 
@@ -43,6 +64,7 @@ export const FloatingRightMenu = () => {
         const element = document.getElementById(item.id);
         if (element && element.offsetTop <= scrollPosition) {
           setActiveSection(item.id);
+          updateUrlHash(item.id);
           break;
         }
       }
@@ -51,16 +73,21 @@ export const FloatingRightMenu = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, []);
 
   const scrollTo = (id) => {
     if (id === 'hero') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
     } else {
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
+        window.history.replaceState(null, '', `#${id}`);
       }
     }
   };

@@ -2,8 +2,8 @@ export const footerData = {
   links: [
     { label: "Home", href: "/", active: true },
     { label: "About Me", href: "#about" },
-    { label: "Experience", href: "#services" },
-    { label: "Projects", href: "#portfolio" },
+    { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#projects" },
     { label: "Achievements", href: "#achievements" },
     {
       label: "LinkedIn",
