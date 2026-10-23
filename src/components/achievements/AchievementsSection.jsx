@@ -63,7 +63,7 @@ export const AchievementsSection = () => {
           {achievements.map((item) => (
             <div
               key={item.id}
-              className="group bg-[#FFFFFF] rounded-2xl p-5 sm:p-6 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-[#E8E8E8] flex flex-col justify-between cursor-default"
+              className="group bg-[#FFFFFF] rounded-2xl p-5 sm:p-6 card-hover-ambient border border-[#E8E8E8] flex flex-col justify-between cursor-default"
             >
               <div>
                 {/* Header: Icon + Year Timeline Badge */}

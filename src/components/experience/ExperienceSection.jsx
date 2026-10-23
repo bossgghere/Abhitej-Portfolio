@@ -9,7 +9,7 @@ import { useInView } from '@/hooks/useInView';
  * - Left Column: Principal Financial Group flagship Hero Card
  * - Center Column: Headline ("Career & Experience"), narrative, curved arrow, and LinkedIn CTA
  * - Right Column: Data Visualisation Internship card + Sparkle bullet highlights
- * On mobile/tablet, the central text seamlessly orders first for natural hierarchy.
+ * Enhanced with hand-drawn SVG arrow, card float ambient shadow, and sparkle rotation.
  */
 export const ExperienceSection = () => {
   const { ctaLink } = experienceData;
@@ -31,7 +31,7 @@ export const ExperienceSection = () => {
         >
           {/* Column 1 (Left Card - lg:col-span-4): Principal Financial Group Hero Card */}
           <div className="order-2 lg:order-1 lg:col-span-4">
-            <div className="group bg-[#FFFFFF] rounded-3xl p-7 sm:p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-[#E8E8E8] flex flex-col justify-between cursor-default">
+            <div className="group bg-[#FFFFFF] rounded-3xl p-7 sm:p-8 card-hover-ambient border border-[#E8E8E8] flex flex-col justify-between cursor-default">
               <div>
                 <div className="w-12 h-12 rounded-full border border-[#E8E8E8] flex items-center justify-center text-[#222222] mb-6 group-hover:scale-110 group-hover:bg-[#F8F8F8] transition-all duration-300">
                   <Briefcase className="w-6 h-6 stroke-[1.5]" />
@@ -107,6 +107,7 @@ export const ExperienceSection = () => {
                   stroke="#7B7B7B"
                   strokeWidth="4"
                   strokeLinecap="round"
+                  className={`arrow-shaft ${inView ? 'drawn' : ''}`}
                 />
                 <path
                   d="M160 45 L 185 50 L 175 75"
@@ -114,6 +115,7 @@ export const ExperienceSection = () => {
                   strokeWidth="4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  className={`arrow-head ${inView ? 'drawn' : ''}`}
                 />
               </svg>
             </div>
@@ -124,7 +126,7 @@ export const ExperienceSection = () => {
             
             {/* Top Milestone Card with Action Button */}
             <div>
-              <div className="relative w-full rounded-3xl p-6 bg-white border border-[#E8E8E8] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+              <div className="relative w-full rounded-3xl p-6 bg-white border border-[#E8E8E8] card-hover-ambient group">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[11px] font-mono uppercase tracking-wider text-[#7B7B7B]">
                     2024 — 2025
@@ -151,8 +153,8 @@ export const ExperienceSection = () => {
             {/* Two Feature Highlights with Sparkle/Star Icons */}
             <div className="space-y-4 sm:space-y-5">
               <div className="group flex items-start gap-4">
-                <div className="shrink-0 w-8 h-8 rounded-full bg-[#222222] text-white flex items-center justify-center mt-0.5 group-hover:rotate-45 group-hover:bg-black transition-all duration-300">
-                  <Sparkle className="w-4 h-4 fill-white" />
+                <div className="shrink-0 w-8 h-8 rounded-full bg-[#222222] text-white flex items-center justify-center mt-0.5 sparkle-badge">
+                  <Sparkle className="w-4 h-4 fill-white sparkle-icon" />
                 </div>
                 <p className="text-xs sm:text-sm text-[#7B7B7B] group-hover:text-[#222222] leading-relaxed transition-colors duration-200">
                   <strong className="text-[#222222] font-medium">Rising Star Award: </strong>
@@ -161,8 +163,8 @@ export const ExperienceSection = () => {
               </div>
 
               <div className="group flex items-start gap-4">
-                <div className="shrink-0 w-8 h-8 rounded-full bg-[#222222] text-white flex items-center justify-center mt-0.5 group-hover:rotate-45 group-hover:bg-black transition-all duration-300">
-                  <Sparkle className="w-4 h-4 fill-white" />
+                <div className="shrink-0 w-8 h-8 rounded-full bg-[#222222] text-white flex items-center justify-center mt-0.5 sparkle-badge">
+                  <Sparkle className="w-4 h-4 fill-white sparkle-icon" />
                 </div>
                 <p className="text-xs sm:text-sm text-[#7B7B7B] group-hover:text-[#222222] leading-relaxed transition-colors duration-200">
                   <strong className="text-[#222222] font-medium">Regulatory Rigor: </strong>

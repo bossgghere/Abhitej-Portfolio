@@ -7,8 +7,9 @@ import { useInView } from '@/hooks/useInView';
  * AboutSection Component
  * Enhanced with smooth scroll-triggered entrance reveals & hover micro-interactions:
  * - Scroll reveal on viewport entry via useInView
- * - Hover card lift and shadow elevation on the Financial Analyst stat card
- * - Avatar hover zoom and sparkle rotate
+ * - SVG Hand-drawn arrow animation on entry
+ * - Card float with diffused ambient shadow
+ * - Sparkle badge twinkle & rotate on hover
  * - "Rising Star Award" positioned at the end as supporting credential
  */
 export const AboutSection = () => {
@@ -38,7 +39,7 @@ export const AboutSection = () => {
               </p>
             </div>
 
-            {/* Directional curved arrow */}
+            {/* Directional curved arrow with hand-drawn stroke animation */}
             <div className="hidden lg:block mt-10 pl-4 select-none pointer-events-none opacity-40 hover:opacity-70 transition-opacity">
               <svg
                 width="200"
@@ -52,6 +53,7 @@ export const AboutSection = () => {
                   stroke="#7B7B7B"
                   strokeWidth="5"
                   strokeLinecap="round"
+                  className={`arrow-shaft ${inView ? 'drawn' : ''}`}
                 />
                 <path
                   d="M150 15 L 180 35 L 160 65"
@@ -59,6 +61,7 @@ export const AboutSection = () => {
                   strokeWidth="5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  className={`arrow-head ${inView ? 'drawn' : ''}`}
                 />
               </svg>
             </div>
@@ -66,7 +69,7 @@ export const AboutSection = () => {
 
           {/* Column 2 (Center): White Stat Card with Financial Analyst and Portrait */}
           <div className="lg:col-span-4">
-            <div className="group bg-[#FFFFFF] rounded-3xl p-7 sm:p-9 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-[#E8E8E8] flex flex-col justify-between cursor-default">
+            <div className="group bg-[#FFFFFF] rounded-3xl p-7 sm:p-9 card-hover-ambient border border-[#E8E8E8] flex flex-col justify-between cursor-default">
               <div>
                 <div className="w-12 h-12 rounded-full border border-[#E8E8E8] flex items-center justify-center text-[#222222] mb-6 group-hover:scale-110 group-hover:bg-[#F8F8F8] transition-all duration-300">
                   <Briefcase className="w-6 h-6 stroke-[1.5]" />
@@ -96,7 +99,7 @@ export const AboutSection = () => {
             
             {/* Top Avatar Card with Action Button */}
             <div className="flex justify-start lg:justify-end">
-              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-3xl overflow-hidden bg-[#E8E8E8] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-3xl overflow-hidden bg-[#E8E8E8] card-hover-ambient group">
                 <img
                   src={avatarCard.image}
                   alt="Abhitej Kumar"
@@ -126,8 +129,8 @@ export const AboutSection = () => {
             <div className="space-y-4 sm:space-y-5">
               {highlights.map((item) => (
                 <div key={item.id} className="group flex items-start gap-4">
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-[#222222] text-white flex items-center justify-center mt-0.5 group-hover:rotate-45 group-hover:bg-black transition-all duration-300">
-                    <Sparkle className="w-4 h-4 fill-white" />
+                  <div className="shrink-0 w-8 h-8 rounded-full bg-[#222222] text-white flex items-center justify-center mt-0.5 sparkle-badge">
+                    <Sparkle className="w-4 h-4 fill-white sparkle-icon" />
                   </div>
                   <p className="text-xs sm:text-sm text-[#7B7B7B] group-hover:text-[#222222] leading-relaxed transition-colors duration-200">
                     {item.title && (
