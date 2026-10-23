@@ -37,9 +37,9 @@ export const experienceData = {
       description:
         "From crafting seamless user experiences to leading strategic product design initiatives, each experience has shaped my approach and strengthened my passion for solving design challenges",
       images: [
-        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&q=80",
-        "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=400&q=80",
-        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&q=80",
+        "/images/projects/exp-thumb-1.png",
+        "/images/projects/exp-thumb-2.png",
+        "/images/projects/exp-thumb-3.png",
       ],
     },
     {
@@ -57,5 +57,6 @@ export const experienceData = {
       "Take advantage of this limited-time offer to discuss your design needs with an experienced UI/UX and product designer.",
     ctaText: "Let's talk",
     ctaLink: "#contact",
+    bgImage: "/images/projects/deal-banner-bg.png",
   },
 };

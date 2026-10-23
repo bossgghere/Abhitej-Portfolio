@@ -7,10 +7,10 @@ export const aboutData = {
     icon: "globe",
     stat: "120%",
     label: "Average increase in client engagement in the first 6 months",
-    image: "/images/hero-portrait.png",
+    image: "/images/about/center-portrait.png",
   },
   avatarCard: {
-    image: "/images/hero-portrait.png",
+    image: "/images/about/avatar-card.png",
     link: "#contact",
   },
   highlights: [

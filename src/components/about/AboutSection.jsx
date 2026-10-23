@@ -1,0 +1,135 @@
+import React from 'react';
+import { ArrowUpRight, Globe, Sparkle } from 'lucide-react';
+import { aboutData } from '@/data';
+
+/**
+ * AboutSection Component
+ * Faithfully reproduces the 3-column composition from "about section.jpeg":
+ * - Left: "About Me" headline, intro description, and sweeping curved arrow
+ * - Center: White elevated stat card with "120%", metric label, and embedded portrait photo
+ * - Right: Avatar quick-card with link button, plus two feature bullets with sparkle badges
+ */
+export const AboutSection = () => {
+  const { title, description, statCard, avatarCard, highlights } = aboutData;
+
+  return (
+    <section id="about" className="relative py-24 sm:py-32 px-6 sm:px-10 lg:px-14 border-t border-[#f0f0f2]">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          
+          {/* Column 1 (Left): Headline, Bio description, Curved directional arrow */}
+          <div className="lg:col-span-4 flex flex-col justify-between h-full pt-2">
+            <div>
+              <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#111111] leading-tight">
+                {title}
+              </h2>
+              <p className="mt-6 text-sm sm:text-base text-[#666666] leading-relaxed max-w-md">
+                {description}
+              </p>
+            </div>
+
+            {/* Directional curved arrow pointing up-right toward the stat card */}
+            <div className="hidden lg:block mt-20 pl-4 select-none pointer-events-none opacity-40">
+              <svg
+                width="200"
+                height="140"
+                viewBox="0 0 200 140"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 120 C 30 70, 90 25, 175 35"
+                  stroke="#333333"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M150 15 L 180 35 L 160 65"
+                  stroke="#333333"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+
+          {/* Column 2 (Center): White Stat Card with 120% and Portrait */}
+          <div className="lg:col-span-4">
+            <div className="bg-white rounded-3xl p-7 sm:p-9 shadow-sm border border-[#ececed] flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-full border border-[#e5e5e7] flex items-center justify-center text-[#111111] mb-6">
+                  <Globe className="w-6 h-6 stroke-[1.5]" />
+                </div>
+                <div className="text-5xl sm:text-6xl font-light tracking-tight text-[#111111] leading-none">
+                  {statCard.stat}
+                </div>
+                <p className="mt-3 text-xs sm:text-sm text-[#737373] leading-relaxed max-w-[260px]">
+                  {statCard.label}
+                </p>
+              </div>
+
+              {/* Inset Portrait Photo */}
+              <div className="mt-8 rounded-2xl overflow-hidden bg-[#f0f0f2] aspect-[4/4]">
+                <img
+                  src={statCard.image}
+                  alt="Designer Portrait"
+                  loading="lazy"
+                  className="w-full h-full object-cover object-top grayscale contrast-[1.05]"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Column 3 (Right): Quick Avatar Card & Sparkle Bullet Points */}
+          <div className="lg:col-span-4 flex flex-col justify-between h-full space-y-12 lg:space-y-16">
+            
+            {/* Top Avatar Card with Action Button */}
+            <div className="flex justify-start lg:justify-end">
+              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-3xl overflow-hidden bg-[#e5e5e7] shadow-sm group">
+                <img
+                  src={avatarCard.image}
+                  alt="Avatar"
+                  loading="lazy"
+                  className="w-full h-full object-cover object-top grayscale"
+                />
+                <a
+                  href={avatarCard.link}
+                  className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                  aria-label="Contact Abhitej"
+                >
+                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black shadow-md">
+                    <ArrowUpRight className="w-5 h-5" />
+                  </div>
+                </a>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none group-hover:hidden">
+                  <div className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-black shadow-sm">
+                    <ArrowUpRight className="w-5 h-5" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Two Feature Highlights with Sparkle/Star Icons */}
+            <div className="space-y-8">
+              {highlights.map((item) => (
+                <div key={item.id} className="flex items-start gap-4">
+                  <div className="shrink-0 w-8 h-8 rounded-full bg-[#181818] text-white flex items-center justify-center mt-0.5">
+                    <Sparkle className="w-4 h-4 fill-white" />
+                  </div>
+                  <p className="text-xs sm:text-sm text-[#555555] leading-relaxed">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;

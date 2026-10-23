@@ -1,0 +1,57 @@
+import React from 'react';
+import { footerData } from '@/data';
+
+/**
+ * FooterSection Component
+ * Recreates the dark minimalist footer from "footer section.jpeg":
+ * - Dark `#141414` container with architectural outline framing
+ * - Horizontal navigation pills on the left
+ * - Prominent direct contact email ("hello@dnova.com") on the right
+ */
+export const FooterSection = () => {
+  const { links, email } = footerData;
+
+  return (
+    <footer className="relative bg-[#141414] text-white py-20 px-6 sm:px-10 lg:px-14 overflow-hidden border-t border-[#222222]">
+      
+      {/* Subtle architectural wireframe background accents */}
+      <div className="absolute inset-0 pointer-events-none opacity-15">
+        <div className="w-[500px] h-[300px] rounded-[40px] border border-white/20 absolute -top-20 -left-20" />
+        <div className="w-[600px] h-[350px] rounded-[50px] border border-white/20 absolute -bottom-32 right-10" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-12">
+        
+        {/* Left Navigation Pills */}
+        <nav className="flex flex-wrap items-center gap-2 sm:gap-3">
+          {links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className={`text-xs sm:text-sm font-normal px-5 py-2 rounded-full transition-colors duration-200 ${
+                link.active
+                  ? 'bg-[#262626] text-white'
+                  : 'text-[#999999] hover:text-white hover:bg-white/5'
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        {/* Right Contact Email */}
+        <div className="w-full lg:w-auto flex justify-start lg:justify-end">
+          <a
+            href={`mailto:${email}`}
+            className="text-3xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white hover:text-gray-300 transition-colors"
+          >
+            {email}
+          </a>
+        </div>
+
+      </div>
+    </footer>
+  );
+};
+
+export default FooterSection;
