@@ -1,33 +1,40 @@
 import React, { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { experienceData } from '@/data';
+import { useInView } from '@/hooks/useInView';
 
 /**
  * ExperienceSection Component
- * Uses UI/UX Theme Specifications:
- * - Background: Tertiary (#F8F8F8)
- * - Typography: Aeonik
- * - Colors: Primary (#222222), Secondary (#7B7B7B), White (#FFFFFF)
+ * Enhanced with smooth scroll reveal, interactive accordion animations,
+ * and hover states on timeline rows.
  */
 export const ExperienceSection = () => {
   const { badge, title, description, ctaText, ctaLink, experiences, dealBanner } =
     experienceData;
 
-  const [expandedId, setExpandedId] = useState('futuretech');
+  const [expandedId, setExpandedId] = useState('one-day-studio');
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   const toggleExpand = (id) => {
     setExpandedId(expandedId === id ? null : id);
   };
 
   return (
-    <section id="services" className="relative py-24 sm:py-32 px-6 sm:px-10 lg:px-14 border-t border-[#E8E8E8] bg-[#F8F8F8]">
-      <div className="max-w-7xl mx-auto">
-        
+    <section
+      id="services"
+      ref={ref}
+      className="relative py-24 sm:py-32 px-6 sm:px-10 lg:px-14 border-t border-[#E8E8E8] bg-[#F8F8F8]"
+    >
+      <div
+        className={`max-w-7xl mx-auto transition-all duration-700 ${
+          inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         {/* Section Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16 sm:mb-20">
           <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8E8E8] text-xs font-medium text-[#222222] mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#222222]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8E8E8] text-xs font-medium text-[#222222] mb-4 hover:bg-[#dedede] transition-colors">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#222222] animate-pulse" />
               <span>{badge}</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#222222] leading-tight">
@@ -41,6 +48,8 @@ export const ExperienceSection = () => {
             </p>
             <a
               href={ctaLink}
+              target="_blank"
+              rel="noreferrer"
               className="group inline-flex items-center gap-1 text-sm font-medium text-[#222222] border-b border-[#222222] pb-0.5 mt-6 hover:text-[#7B7B7B] hover:border-[#7B7B7B] transition-colors"
             >
               <span>{ctaText}</span>
@@ -58,8 +67,8 @@ export const ExperienceSection = () => {
               <div
                 key={exp.id}
                 onClick={() => toggleExpand(exp.id)}
-                className={`py-8 transition-colors duration-200 cursor-pointer ${
-                  isExpanded ? 'bg-white/60' : 'hover:bg-white/40'
+                className={`py-8 px-4 -mx-4 rounded-2xl transition-all duration-300 cursor-pointer ${
+                  isExpanded ? 'bg-white/70 shadow-sm' : 'hover:bg-white/40'
                 }`}
               >
                 {/* Main Row summary */}
@@ -67,7 +76,7 @@ export const ExperienceSection = () => {
                   
                   {/* Left: Company & Date */}
                   <div className="md:col-span-4">
-                    <h3 className="text-base sm:text-lg font-normal text-[#222222]">
+                    <h3 className="text-base sm:text-lg font-normal text-[#222222] group-hover:text-black">
                       {exp.company}
                     </h3>
                     <p className="text-xs text-[#7B7B7B] mt-1 flex items-center gap-1.5">
@@ -88,10 +97,10 @@ export const ExperienceSection = () => {
                     {exp.tags.map((tag) => (
                       <span
                         key={tag}
-                        className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                        className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 ${
                           isExpanded
-                            ? 'bg-[#222222] text-[#FFFFFF]'
-                            : 'bg-[#E8E8E8] text-[#7B7B7B]'
+                            ? 'bg-[#222222] text-[#FFFFFF] shadow-sm scale-105'
+                            : 'bg-[#E8E8E8] text-[#7B7B7B] hover:bg-[#dedede]'
                         }`}
                       >
                         {tag}
@@ -102,20 +111,20 @@ export const ExperienceSection = () => {
 
                 {/* Expanded Details */}
                 {isExpanded && exp.images && (
-                  <div className="mt-8 pt-6 border-t border-[#E8E8E8] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center animate-in fade-in duration-300">
+                  <div className="mt-8 pt-6 border-t border-[#E8E8E8] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center animate-fade-in duration-300">
                     
                     {/* 3 Project Thumbnails */}
                     <div className="lg:col-span-6 grid grid-cols-3 gap-3">
                       {exp.images.map((imgSrc, idx) => (
                         <div
                           key={idx}
-                          className="rounded-xl overflow-hidden aspect-[4/3] bg-[#E8E8E8] shadow-sm"
+                          className="group/thumb rounded-xl overflow-hidden aspect-[4/3] bg-[#E8E8E8] shadow-sm hover:shadow-md transition-shadow"
                         >
                           <img
                             src={imgSrc}
                             alt={`${exp.company} thumbnail ${idx + 1}`}
                             loading="lazy"
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"
                           />
                         </div>
                       ))}
@@ -130,7 +139,7 @@ export const ExperienceSection = () => {
 
                     {/* Action Arrow Button */}
                     <div className="lg:col-span-2 flex justify-start lg:justify-end">
-                      <div className="w-14 h-14 rounded-full bg-[#222222] text-white flex items-center justify-center hover:scale-105 transition-transform shadow-md">
+                      <div className="w-14 h-14 rounded-full bg-[#222222] text-white flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 shadow-md">
                         <ArrowUpRight className="w-6 h-6" />
                       </div>
                     </div>
@@ -141,15 +150,15 @@ export const ExperienceSection = () => {
           })}
         </div>
 
-        {/* Exclusive Winter Deal Days Consultation Banner */}
-        <div className="mt-20 sm:mt-24 rounded-3xl overflow-hidden relative bg-[#222222] text-white shadow-xl">
+        {/* Consultation Banner */}
+        <div className="group mt-20 sm:mt-24 rounded-3xl overflow-hidden relative bg-[#222222] text-white shadow-xl hover:shadow-2xl transition-all duration-500">
           {/* Background image & gradient overlay */}
           <div className="absolute inset-0 z-0">
             <img
               src={dealBanner.bgImage}
               alt="Consultation Background"
               loading="lazy"
-              className="w-full h-full object-cover opacity-35"
+              className="w-full h-full object-cover opacity-35 group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#222222] via-[#222222]/80 to-[#222222]/50" />
           </div>
@@ -167,10 +176,12 @@ export const ExperienceSection = () => {
             <div className="mt-8">
               <a
                 href={dealBanner.ctaLink}
-                className="group inline-flex items-center gap-1.5 text-sm sm:text-base font-medium text-white border-b border-white pb-1 hover:text-gray-300 transition-colors"
+                target="_blank"
+                rel="noreferrer"
+                className="group/btn inline-flex items-center gap-1.5 text-sm sm:text-base font-medium text-white border-b border-white pb-1 hover:text-gray-300 hover:border-gray-300 transition-colors"
               >
                 <span>{dealBanner.ctaText}</span>
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
               </a>
             </div>
           </div>

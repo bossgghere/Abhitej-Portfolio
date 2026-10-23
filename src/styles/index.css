@@ -2,7 +2,6 @@
 
 /* ==========================================================================
    Aeonik Font Face Definitions (UI/UX Specification)
-   Searches for locally installed Aeonik / Aeonik TRIAL
    ========================================================================== */
 
 @font-face {
@@ -30,7 +29,7 @@
 }
 
 /* ==========================================================================
-   Design Tokens (UI/UX Specification)
+   Design Tokens
    - Primary: #222222
    - Secondary: #7B7B7B
    - Tertiary: #F8F8F8
@@ -62,4 +61,68 @@
 .writing-mode-vertical {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   GPU-Accelerated Subtle Animations & Micro-Interactions
+   ========================================================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity;
+}
+
+.animate-subtle-bounce {
+  animation: subtleFloat 2s ease-in-out infinite;
+}
+
+/* Stagger delay classes */
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-400 {
+  animation-delay: 400ms;
+}
+.delay-500 {
+  animation-delay: 500ms;
 }
