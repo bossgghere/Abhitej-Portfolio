@@ -1,24 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { experienceData } from '@/data';
 import { useInView } from '@/hooks/useInView';
 
 /**
  * ExperienceSection Component
- * Recreates the exact layout from reference screenshot "experience section.jpeg":
- * - "● Experiences" pill & "Explore My Professional Journey" header
- * - Divided rows with company, period, role, and pill tags
- * - Interactive expandable item with 3 thumbnails & circular arrow
+ * Minimalist, editorial timeline of Abhitej Kumar's career milestones.
+ * Fully aligned with the high-contrast Aeonik theme:
+ * - Scannable 3-column layout (Period & Company | Role & Impact | Tags)
+ * - Clean divided horizontal rows without jumpy accordions
+ * - Subtle hover lift & background highlight
  */
 export const ExperienceSection = () => {
   const { badge, title, description, ctaText, ctaLink, experiences } = experienceData;
-
-  const [expandedId, setExpandedId] = useState('principal-analyst');
-  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
-
-  const toggleExpand = (id) => {
-    setExpandedId(expandedId === id ? null : id);
-  };
+  const [ref, inView] = useInView({ threshold: 0.05, triggerOnce: true });
 
   return (
     <section
@@ -28,17 +23,17 @@ export const ExperienceSection = () => {
     >
       <div
         className={`max-w-7xl mx-auto transition-all duration-700 ${
-          inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         }`}
       >
         {/* Section Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-10 sm:mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start mb-10 sm:mb-12">
           <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8E8E8] text-xs font-medium text-[#222222] mb-4 hover:bg-[#dedede] transition-colors">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8E8E8] text-xs font-medium text-[#222222] mb-3 hover:bg-[#dedede] transition-colors">
               <span className="w-1.5 h-1.5 rounded-full bg-[#222222] animate-pulse" />
               <span>{badge}</span>
             </div>
-            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#222222] leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-[#222222] leading-tight">
               {title}
             </h2>
           </div>
@@ -51,98 +46,57 @@ export const ExperienceSection = () => {
               href={ctaLink}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center gap-1 text-sm font-medium text-[#222222] border-b border-[#222222] pb-0.5 mt-6 hover:text-[#7B7B7B] hover:border-[#7B7B7B] transition-colors"
+              className="group inline-flex items-center gap-1 text-xs font-medium text-[#222222] border-b border-[#222222] pb-0.5 mt-4 hover:text-[#7B7B7B] hover:border-[#7B7B7B] transition-colors"
             >
               <span>{ctaText}</span>
-              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
         </div>
 
-        {/* Experience Timeline Rows */}
+        {/* Minimalist Divided Timeline Rows */}
         <div className="divide-y divide-[#E8E8E8] border-y border-[#E8E8E8]">
-          {experiences.map((exp) => {
-            const isExpanded = expandedId === exp.id;
-
-            return (
-              <div
-                key={exp.id}
-                onClick={() => toggleExpand(exp.id)}
-                className={`py-6 px-4 -mx-4 rounded-2xl transition-all duration-300 cursor-pointer ${
-                  isExpanded ? 'bg-white/70 shadow-sm' : 'hover:bg-white/40'
-                }`}
-              >
-                {/* Main Row summary */}
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-                  
-                  {/* Left: Company & Date */}
-                  <div className="md:col-span-4">
-                    <h3 className="text-base sm:text-lg font-normal text-[#222222] group-hover:text-black">
-                      {exp.company}
-                    </h3>
-                    <p className="text-xs text-[#7B7B7B] mt-1 flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-[#7B7B7B]" />
-                      <span>{exp.period}</span>
-                    </p>
-                  </div>
-
-                  {/* Middle: Role & Description */}
-                  <div className="md:col-span-5">
-                    <p className="text-xs sm:text-sm text-[#7B7B7B]">
-                      {exp.role}
-                    </p>
-                  </div>
-
-                  {/* Right: Category Tags */}
-                  <div className="md:col-span-3 flex items-center justify-start md:justify-end gap-2">
-                    {exp.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 ${
-                          isExpanded
-                            ? 'bg-[#222222] text-[#FFFFFF] shadow-sm scale-105'
-                            : 'bg-[#E8E8E8] text-[#7B7B7B] hover:bg-[#dedede]'
-                        }`}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Expanded Details */}
-                {isExpanded && (
-                  <div className="mt-6 pt-5 border-t border-[#E8E8E8] animate-fade-in duration-300">
-                    <p className="text-xs sm:text-sm text-[#7B7B7B] leading-relaxed mb-3">
-                      {exp.description}
-                    </p>
-                    {exp.bullets && (
-                      <ul className="space-y-2 mb-4">
-                        {exp.bullets.map((bullet, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-[#222222]">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#222222] mt-1.5 shrink-0" />
-                            <span>{bullet}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                    <div className="flex items-center justify-end pt-1">
-                      <a
-                        href={ctaLink}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-medium text-[#222222] hover:text-[#7B7B7B] transition-colors"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <span>View credentials on LinkedIn</span>
-                        <ArrowUpRight className="w-3.5 h-3.5" />
-                      </a>
-                    </div>
-                  </div>
-                )}
+          {experiences.map((exp) => (
+            <div
+              key={exp.id}
+              className="py-7 sm:py-8 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-start group hover:bg-white/60 -mx-4 px-4 rounded-2xl transition-all duration-200"
+            >
+              {/* Column 1 (3 cols): Period, Company, Location */}
+              <div className="lg:col-span-3">
+                <span className="text-xs font-mono text-[#7B7B7B] tracking-wide uppercase">
+                  {exp.period}
+                </span>
+                <h4 className="text-xs sm:text-sm font-medium text-[#222222] mt-1">
+                  {exp.company}
+                </h4>
+                <p className="text-[11px] text-[#7B7B7B]">
+                  {exp.location}
+                </p>
               </div>
-            );
-          })}
+
+              {/* Column 2 (6 cols): Role & Core Impact */}
+              <div className="lg:col-span-6">
+                <h3 className="text-base sm:text-lg font-normal text-[#222222] group-hover:text-black transition-colors leading-snug">
+                  {exp.role}
+                </h3>
+                <p className="mt-2 text-xs sm:text-sm text-[#7B7B7B] leading-relaxed">
+                  {exp.description}
+                </p>
+              </div>
+
+              {/* Column 3 (3 cols): Domain & Skill Tags */}
+              <div className="lg:col-span-3 flex flex-wrap lg:justify-end gap-1.5 pt-1">
+                {exp.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 rounded-full text-xs font-normal text-[#222222] bg-white border border-[#E8E8E8] group-hover:border-[#222222]/30 transition-colors shadow-2xs select-none"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
 
       </div>

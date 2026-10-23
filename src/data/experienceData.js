@@ -8,45 +8,33 @@ export const experienceData = {
   experiences: [
     {
       id: "principal-analyst",
-      company: "Principal Financial Group, Hyderabad",
-      period: "Jul 2026 - Present",
-      role: "Financial Analyst – 401(k) Retirement Plan Correction Team",
-      tags: ["401(k) Plans", "ERISA Compliance"],
+      company: "Principal Financial Group",
+      location: "Hyderabad, India",
+      period: "Jul 2026 — Present",
+      role: "Financial Analyst – 401(k) Plan Correction Team",
+      tags: ["401(k) Plans", "ERISA Compliance", "Risk Mitigation"],
       description:
-        "Specializing in researching and resolving complex 401(k) plan errors, transaction discrepancies, and vesting validations ensuring strict regulatory ERISA compliance.",
-      bullets: [
-        "Identify, research, and resolve complex 401(k) retirement plan discrepancies and transaction errors.",
-        "Perform vesting validations, contribution adjustments, and corrective distributions under strict ERISA standards.",
-        "Collaborate across operational teams to audit plan transactions and mitigate regulatory compliance risks.",
-      ],
+        "Specializing in researching and resolving complex 401(k) retirement plan discrepancies, contribution corrections, and vesting validations ensuring strict ERISA regulatory compliance.",
     },
     {
       id: "principal-trainee",
-      company: "Principal Financial Group, Hyderabad",
-      period: "Jun 2025 - Jun 2026",
+      company: "Principal Financial Group",
+      location: "Hyderabad, India",
+      period: "Jun 2025 — Jun 2026",
       role: "Trainee Analyst – Process Specialist (Rising Star Award)",
-      tags: ["Beneficiary Ops", "Quality Check"],
+      tags: ["Rising Star Award", "Beneficiary Ops", "Quality Assurance"],
       description:
-        "Honored with the Rising Star Award for zero-error accuracy. Managed participant maintenance, date-of-death validations, and high-stakes beneficiary investment allocations.",
-      bullets: [
-        "Received the Rising Star Award for exceptional operational performance and zero-error accuracy.",
-        "Managed participant account maintenance, date-of-death (DOD) validations, and beneficiary investment disbursements.",
-        "Conducted multi-point quality reviews and contributed to Standard Operating Procedure (SOP) documentation.",
-      ],
+        "Honored with the Rising Star Award for zero-error execution. Managed participant maintenance, date-of-death validations, and high-stakes beneficiary investment disbursements upon participant demise.",
     },
     {
       id: "data-vis-intern",
       company: "Data Visualisation & Analytics",
-      period: "2024 - 2025",
+      location: "Hyderabad, India",
+      period: "2024 — 2025",
       role: "Data Visualisation Analyst and Development Intern",
-      tags: ["Power BI", "Excel Dashboards"],
+      tags: ["Power BI", "Excel Dashboards", "Forecasting"],
       description:
-        "Hands-on data visualization using Excel and Power BI. Built executive dashboards to communicate business insights, analyze financial trends, and support strategic forecasting.",
-      bullets: [
-        "Engineered executive business dashboards and KPI reports utilizing Power BI and advanced Excel.",
-        "Conducted financial data analysis, identified trends, and prepared forecasting reports for senior decision-makers.",
-        "Delivered data storytelling presentations to communicate complex business insights clearly.",
-      ],
+        "Engineered executive business dashboards and KPI reports using Power BI and advanced Excel. Analyzed financial datasets to uncover trends and deliver forecasting recommendations for leadership.",
     },
   ],
 };
