@@ -3,9 +3,8 @@ import { heroData } from '@/data';
 
 /**
  * HeroPortrait Component
- * Displays the hero portrait with an organic bottom fade gradient mask.
- * This completely eliminates any visible cut lines, flat borders, or vertical sides,
- * melting seamlessly into the tertiary (#F8F8F8) background.
+ * Displays the hero portrait with a minimal, subtle bottom edge feather (last 6-7%),
+ * keeping over 93% of the portrait completely solid and crisp.
  */
 export const HeroPortrait = () => {
   const { portrait } = heroData;
@@ -19,8 +18,8 @@ export const HeroPortrait = () => {
           fetchpriority={portrait.fetchPriority || "high"}
           className="w-full h-auto max-h-[72vh] sm:max-h-[80vh] lg:max-h-[86vh] xl:max-h-[90vh] object-contain object-bottom grayscale contrast-[1.06] brightness-[1.02] transition-all duration-300"
           style={{
-            maskImage: 'linear-gradient(to bottom, black 75%, transparent 98%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 98%)',
+            maskImage: 'linear-gradient(to bottom, black 93%, transparent 99.5%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, black 93%, transparent 99.5%)',
           }}
         />
       </div>
