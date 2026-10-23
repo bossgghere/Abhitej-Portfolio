@@ -156,18 +156,27 @@ export const ProjectsSection = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M180 120 C 170 70, 110 25, 25 35"
+                  d="M180 120 C 170 70, 110 25, 20 35"
+                  pathLength="100"
                   stroke="#7B7B7B"
                   strokeWidth="5"
                   strokeLinecap="round"
                   className={`arrow-shaft ${inView ? 'drawn' : ''}`}
                 />
                 <path
-                  d="M50 15 L 20 35 L 40 65"
+                  d="M20 35 L 50 15"
+                  pathLength="100"
                   stroke="#7B7B7B"
                   strokeWidth="5"
                   strokeLinecap="round"
-                  strokeLinejoin="round"
+                  className={`arrow-head ${inView ? 'drawn' : ''}`}
+                />
+                <path
+                  d="M20 35 L 40 65"
+                  pathLength="100"
+                  stroke="#7B7B7B"
+                  strokeWidth="5"
+                  strokeLinecap="round"
                   className={`arrow-head ${inView ? 'drawn' : ''}`}
                 />
               </svg>

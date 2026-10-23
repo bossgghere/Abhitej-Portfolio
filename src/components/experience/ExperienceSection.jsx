@@ -104,17 +104,26 @@ export const ExperienceSection = () => {
               >
                 <path
                   d="M10 20 C 50 80, 140 100, 185 50"
+                  pathLength="100"
                   stroke="#7B7B7B"
                   strokeWidth="4"
                   strokeLinecap="round"
                   className={`arrow-shaft ${inView ? 'drawn' : ''}`}
                 />
                 <path
-                  d="M160 45 L 185 50 L 175 75"
+                  d="M185 50 L 160 45"
+                  pathLength="100"
                   stroke="#7B7B7B"
                   strokeWidth="4"
                   strokeLinecap="round"
-                  strokeLinejoin="round"
+                  className={`arrow-head ${inView ? 'drawn' : ''}`}
+                />
+                <path
+                  d="M185 50 L 175 75"
+                  pathLength="100"
+                  stroke="#7B7B7B"
+                  strokeWidth="4"
+                  strokeLinecap="round"
                   className={`arrow-head ${inView ? 'drawn' : ''}`}
                 />
               </svg>

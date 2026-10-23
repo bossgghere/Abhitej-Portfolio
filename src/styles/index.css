@@ -131,11 +131,11 @@
    Bespoke Editorial Micro-Animations (1, 3, 4)
    ========================================================================== */
 
-/* 1. SVG Arrow Hand-Drawn Stroke Animation */
+/* 1. SVG Arrow Hand-Drawn Stroke Animation (Precise pathLength=100 timing) */
 .arrow-shaft {
-  stroke-dasharray: 320;
-  stroke-dashoffset: 320;
-  transition: stroke-dashoffset 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+  stroke-dasharray: 100.1;
+  stroke-dashoffset: 100.1;
+  transition: stroke-dashoffset 0.65s cubic-bezier(0.25, 1, 0.5, 1) 0.15s;
   will-change: stroke-dashoffset;
 }
 
@@ -144,9 +144,9 @@
 }
 
 .arrow-head {
-  stroke-dasharray: 120;
-  stroke-dashoffset: 120;
-  transition: stroke-dashoffset 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.8s;
+  stroke-dasharray: 100.1;
+  stroke-dashoffset: 100.1;
+  transition: stroke-dashoffset 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) 0.75s;
   will-change: stroke-dashoffset;
 }
 
