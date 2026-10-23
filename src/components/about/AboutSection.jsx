@@ -4,26 +4,26 @@ import { aboutData } from '@/data';
 
 /**
  * AboutSection Component
- * Faithfully reproduces the 3-column composition from "about section.jpeg":
- * - Left: "About Me" headline, intro description, and sweeping curved arrow
- * - Center: White elevated stat card with "120%", metric label, and embedded portrait photo
- * - Right: Avatar quick-card with link button, plus two feature bullets with sparkle badges
+ * Rebuilt with UI/UX Theme Specifications:
+ * - Background: Tertiary (#F8F8F8)
+ * - Text: Primary (#222222) & Secondary (#7B7B7B)
+ * - Card: White (#FFFFFF) with #E8E8E8 border
  */
 export const AboutSection = () => {
   const { title, description, statCard, avatarCard, highlights } = aboutData;
 
   return (
-    <section id="about" className="relative py-24 sm:py-32 px-6 sm:px-10 lg:px-14 border-t border-[#f0f0f2]">
+    <section id="about" className="relative py-24 sm:py-32 px-6 sm:px-10 lg:px-14 border-t border-[#E8E8E8] bg-[#F8F8F8]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           
           {/* Column 1 (Left): Headline, Bio description, Curved directional arrow */}
           <div className="lg:col-span-4 flex flex-col justify-between h-full pt-2">
             <div>
-              <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#111111] leading-tight">
+              <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#222222] leading-tight">
                 {title}
               </h2>
-              <p className="mt-6 text-sm sm:text-base text-[#666666] leading-relaxed max-w-md">
+              <p className="mt-6 text-sm sm:text-base text-[#7B7B7B] leading-relaxed max-w-md">
                 {description}
               </p>
             </div>
@@ -39,14 +39,14 @@ export const AboutSection = () => {
               >
                 <path
                   d="M20 120 C 30 70, 90 25, 175 35"
-                  stroke="#333333"
-                  strokeWidth="6"
+                  stroke="#7B7B7B"
+                  strokeWidth="5"
                   strokeLinecap="round"
                 />
                 <path
                   d="M150 15 L 180 35 L 160 65"
-                  stroke="#333333"
-                  strokeWidth="6"
+                  stroke="#7B7B7B"
+                  strokeWidth="5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
@@ -56,21 +56,21 @@ export const AboutSection = () => {
 
           {/* Column 2 (Center): White Stat Card with 120% and Portrait */}
           <div className="lg:col-span-4">
-            <div className="bg-white rounded-3xl p-7 sm:p-9 shadow-sm border border-[#ececed] flex flex-col justify-between">
+            <div className="bg-[#FFFFFF] rounded-3xl p-7 sm:p-9 shadow-sm border border-[#E8E8E8] flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-full border border-[#e5e5e7] flex items-center justify-center text-[#111111] mb-6">
+                <div className="w-12 h-12 rounded-full border border-[#E8E8E8] flex items-center justify-center text-[#222222] mb-6">
                   <Globe className="w-6 h-6 stroke-[1.5]" />
                 </div>
-                <div className="text-5xl sm:text-6xl font-light tracking-tight text-[#111111] leading-none">
+                <div className="text-5xl sm:text-6xl font-light tracking-tight text-[#222222] leading-none">
                   {statCard.stat}
                 </div>
-                <p className="mt-3 text-xs sm:text-sm text-[#737373] leading-relaxed max-w-[260px]">
+                <p className="mt-3 text-xs sm:text-sm text-[#7B7B7B] leading-relaxed max-w-[260px]">
                   {statCard.label}
                 </p>
               </div>
 
               {/* Inset Portrait Photo */}
-              <div className="mt-8 rounded-2xl overflow-hidden bg-[#f0f0f2] aspect-[4/4]">
+              <div className="mt-8 rounded-2xl overflow-hidden bg-[#F8F8F8] aspect-[4/4]">
                 <img
                   src={statCard.image}
                   alt="Designer Portrait"
@@ -86,7 +86,7 @@ export const AboutSection = () => {
             
             {/* Top Avatar Card with Action Button */}
             <div className="flex justify-start lg:justify-end">
-              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-3xl overflow-hidden bg-[#e5e5e7] shadow-sm group">
+              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-3xl overflow-hidden bg-[#E8E8E8] shadow-sm group">
                 <img
                   src={avatarCard.image}
                   alt="Avatar"
@@ -98,12 +98,12 @@ export const AboutSection = () => {
                   className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                   aria-label="Contact Abhitej"
                 >
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black shadow-md">
+                  <div className="w-10 h-10 rounded-full bg-[#FFFFFF] flex items-center justify-center text-[#222222] shadow-md">
                     <ArrowUpRight className="w-5 h-5" />
                   </div>
                 </a>
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none group-hover:hidden">
-                  <div className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-black shadow-sm">
+                  <div className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#222222] shadow-sm">
                     <ArrowUpRight className="w-5 h-5" />
                   </div>
                 </div>
@@ -114,10 +114,10 @@ export const AboutSection = () => {
             <div className="space-y-8">
               {highlights.map((item) => (
                 <div key={item.id} className="flex items-start gap-4">
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-[#181818] text-white flex items-center justify-center mt-0.5">
+                  <div className="shrink-0 w-8 h-8 rounded-full bg-[#222222] text-white flex items-center justify-center mt-0.5">
                     <Sparkle className="w-4 h-4 fill-white" />
                   </div>
-                  <p className="text-xs sm:text-sm text-[#555555] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#7B7B7B] leading-relaxed">
                     {item.text}
                   </p>
                 </div>

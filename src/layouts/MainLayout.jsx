@@ -5,11 +5,14 @@ import { LeftSidebarMeta } from '../components/common/LeftSidebarMeta';
 
 /**
  * MainLayout Component
- * Houses the top navigation, left-side vertical metadata rail, and page outlet.
+ * Formatted with UI/UX theme colors:
+ * - Background: Tertiary (#F8F8F8)
+ * - Text: Primary (#222222)
+ * - Borders: #E8E8E8
  */
 export const MainLayout = () => {
   return (
-    <div className="relative min-h-screen bg-[#f9f9fa] text-[#111111] overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#F8F8F8] text-[#222222] overflow-x-hidden font-sans">
       {/* Left side desktop rail ("Product designer" | "2024") */}
       <LeftSidebarMeta />
 

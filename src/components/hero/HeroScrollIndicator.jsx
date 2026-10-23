@@ -4,7 +4,7 @@ import { heroData } from '@/data';
 
 /**
  * HeroScrollIndicator Component
- * Renders the bottom-left "Scroll down ↓" link with smooth scrolling
+ * Smooth scroll link styled with Secondary (#7B7B7B) hovering to Primary (#222222)
  */
 export const HeroScrollIndicator = () => {
   const { scrollIndicator } = heroData;
@@ -23,7 +23,7 @@ export const HeroScrollIndicator = () => {
     <a
       href={`#${scrollIndicator.targetId}`}
       onClick={handleScroll}
-      className="group inline-flex items-center gap-2 text-xs sm:text-sm font-normal text-[#444444] hover:text-black transition-colors duration-200 cursor-pointer"
+      className="group inline-flex items-center gap-2 text-xs sm:text-sm font-normal text-[#7B7B7B] hover:text-[#222222] transition-colors duration-200 cursor-pointer"
     >
       <span>{scrollIndicator.text}</span>
       <ArrowDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-y-1" />

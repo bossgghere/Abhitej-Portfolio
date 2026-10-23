@@ -3,16 +3,17 @@ import { footerData } from '@/data';
 
 /**
  * FooterSection Component
- * Recreates the dark minimalist footer from "footer section.jpeg":
- * - Dark `#141414` container with architectural outline framing
- * - Horizontal navigation pills on the left
- * - Prominent direct contact email ("hello@dnova.com") on the right
+ * Uses UI/UX Theme Specifications:
+ * - Background: Primary (#222222)
+ * - Typography: Aeonik
+ * - Navigation: Active pill in #333333, inactive in Secondary (#7B7B7B)
+ * - Email: White (#FFFFFF)
  */
 export const FooterSection = () => {
   const { links, email } = footerData;
 
   return (
-    <footer className="relative bg-[#141414] text-white py-20 px-6 sm:px-10 lg:px-14 overflow-hidden border-t border-[#222222]">
+    <footer className="relative bg-[#222222] text-white py-20 px-6 sm:px-10 lg:px-14 overflow-hidden border-t border-[#333333]">
       
       {/* Subtle architectural wireframe background accents */}
       <div className="absolute inset-0 pointer-events-none opacity-15">
@@ -30,8 +31,8 @@ export const FooterSection = () => {
               href={link.href}
               className={`text-xs sm:text-sm font-normal px-5 py-2 rounded-full transition-colors duration-200 ${
                 link.active
-                  ? 'bg-[#262626] text-white'
-                  : 'text-[#999999] hover:text-white hover:bg-white/5'
+                  ? 'bg-[#333333] text-white'
+                  : 'text-[#7B7B7B] hover:text-white hover:bg-white/5'
               }`}
             >
               {link.label}
@@ -43,7 +44,7 @@ export const FooterSection = () => {
         <div className="w-full lg:w-auto flex justify-start lg:justify-end">
           <a
             href={`mailto:${email}`}
-            className="text-3xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white hover:text-gray-300 transition-colors"
+            className="text-3xl sm:text-5xl lg:text-6xl font-light tracking-tight text-[#FFFFFF] hover:text-[#7B7B7B] transition-colors"
           >
             {email}
           </a>

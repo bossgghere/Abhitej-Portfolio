@@ -4,11 +4,10 @@ import { experienceData } from '@/data';
 
 /**
  * ExperienceSection Component
- * Faithfully matches "experience section.jpeg":
- * - Pill badge "● Experiences" and heading "Explore My Design Journey"
- * - Clean work experience list with tags
- * - Interactive expandable card for FutureTech with preview imagery and action button
- * - High-impact dark consultation banner "Exclusive Winter Deal Days Get a Free Consultation!"
+ * Uses UI/UX Theme Specifications:
+ * - Background: Tertiary (#F8F8F8)
+ * - Typography: Aeonik
+ * - Colors: Primary (#222222), Secondary (#7B7B7B), White (#FFFFFF)
  */
 export const ExperienceSection = () => {
   const { badge, title, description, ctaText, ctaLink, experiences, dealBanner } =
@@ -21,28 +20,28 @@ export const ExperienceSection = () => {
   };
 
   return (
-    <section id="services" className="relative py-24 sm:py-32 px-6 sm:px-10 lg:px-14 border-t border-[#f0f0f2]">
+    <section id="services" className="relative py-24 sm:py-32 px-6 sm:px-10 lg:px-14 border-t border-[#E8E8E8] bg-[#F8F8F8]">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16 sm:mb-20">
           <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f0f0f2] text-xs font-medium text-[#444444] mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-black" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8E8E8] text-xs font-medium text-[#222222] mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#222222]" />
               <span>{badge}</span>
             </div>
-            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#111111] leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#222222] leading-tight">
               {title}
             </h2>
           </div>
 
           <div className="lg:col-span-5 flex flex-col justify-between items-start lg:items-end">
-            <p className="text-xs sm:text-sm text-[#666666] leading-relaxed max-w-md lg:text-left">
+            <p className="text-xs sm:text-sm text-[#7B7B7B] leading-relaxed max-w-md lg:text-left">
               {description}
             </p>
             <a
               href={ctaLink}
-              className="group inline-flex items-center gap-1 text-sm font-medium text-black border-b border-black pb-0.5 mt-6 hover:opacity-80 transition-opacity"
+              className="group inline-flex items-center gap-1 text-sm font-medium text-[#222222] border-b border-[#222222] pb-0.5 mt-6 hover:text-[#7B7B7B] hover:border-[#7B7B7B] transition-colors"
             >
               <span>{ctaText}</span>
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -51,7 +50,7 @@ export const ExperienceSection = () => {
         </div>
 
         {/* Experience Timeline Rows */}
-        <div className="divide-y divide-[#ececed] border-y border-[#ececed]">
+        <div className="divide-y divide-[#E8E8E8] border-y border-[#E8E8E8]">
           {experiences.map((exp) => {
             const isExpanded = expandedId === exp.id;
 
@@ -60,7 +59,7 @@ export const ExperienceSection = () => {
                 key={exp.id}
                 onClick={() => toggleExpand(exp.id)}
                 className={`py-8 transition-colors duration-200 cursor-pointer ${
-                  isExpanded ? 'bg-[#fafafa]' : 'hover:bg-[#fcfcfd]'
+                  isExpanded ? 'bg-white/60' : 'hover:bg-white/40'
                 }`}
               >
                 {/* Main Row summary */}
@@ -68,18 +67,18 @@ export const ExperienceSection = () => {
                   
                   {/* Left: Company & Date */}
                   <div className="md:col-span-4">
-                    <h3 className="text-base sm:text-lg font-normal text-[#111111]">
+                    <h3 className="text-base sm:text-lg font-normal text-[#222222]">
                       {exp.company}
                     </h3>
-                    <p className="text-xs text-[#888888] mt-1 flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-[#888888]" />
+                    <p className="text-xs text-[#7B7B7B] mt-1 flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-[#7B7B7B]" />
                       <span>{exp.period}</span>
                     </p>
                   </div>
 
                   {/* Middle: Role & Description */}
                   <div className="md:col-span-5">
-                    <p className="text-xs sm:text-sm text-[#555555]">
+                    <p className="text-xs sm:text-sm text-[#7B7B7B]">
                       {exp.role}
                     </p>
                   </div>
@@ -91,8 +90,8 @@ export const ExperienceSection = () => {
                         key={tag}
                         className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
                           isExpanded
-                            ? 'bg-[#181818] text-white'
-                            : 'bg-[#f0f0f2] text-[#444444]'
+                            ? 'bg-[#222222] text-[#FFFFFF]'
+                            : 'bg-[#E8E8E8] text-[#7B7B7B]'
                         }`}
                       >
                         {tag}
@@ -101,16 +100,16 @@ export const ExperienceSection = () => {
                   </div>
                 </div>
 
-                {/* Expanded Details (matching FutureTech from reference image) */}
+                {/* Expanded Details */}
                 {isExpanded && exp.images && (
-                  <div className="mt-8 pt-6 border-t border-[#f0f0f2] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center animate-in fade-in duration-300">
+                  <div className="mt-8 pt-6 border-t border-[#E8E8E8] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center animate-in fade-in duration-300">
                     
                     {/* 3 Project Thumbnails */}
                     <div className="lg:col-span-6 grid grid-cols-3 gap-3">
                       {exp.images.map((imgSrc, idx) => (
                         <div
                           key={idx}
-                          className="rounded-xl overflow-hidden aspect-[4/3] bg-[#e5e5e7] shadow-sm"
+                          className="rounded-xl overflow-hidden aspect-[4/3] bg-[#E8E8E8] shadow-sm"
                         >
                           <img
                             src={imgSrc}
@@ -124,14 +123,14 @@ export const ExperienceSection = () => {
 
                     {/* Description Paragraph */}
                     <div className="lg:col-span-4">
-                      <p className="text-xs sm:text-sm text-[#666666] leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#7B7B7B] leading-relaxed">
                         {exp.description}
                       </p>
                     </div>
 
                     {/* Action Arrow Button */}
                     <div className="lg:col-span-2 flex justify-start lg:justify-end">
-                      <div className="w-14 h-14 rounded-full bg-[#181818] text-white flex items-center justify-center hover:scale-105 transition-transform shadow-md">
+                      <div className="w-14 h-14 rounded-full bg-[#222222] text-white flex items-center justify-center hover:scale-105 transition-transform shadow-md">
                         <ArrowUpRight className="w-6 h-6" />
                       </div>
                     </div>
@@ -143,7 +142,7 @@ export const ExperienceSection = () => {
         </div>
 
         {/* Exclusive Winter Deal Days Consultation Banner */}
-        <div className="mt-20 sm:mt-24 rounded-3xl overflow-hidden relative bg-[#111111] text-white shadow-xl">
+        <div className="mt-20 sm:mt-24 rounded-3xl overflow-hidden relative bg-[#222222] text-white shadow-xl">
           {/* Background image & gradient overlay */}
           <div className="absolute inset-0 z-0">
             <img
@@ -152,17 +151,17 @@ export const ExperienceSection = () => {
               loading="lazy"
               className="w-full h-full object-cover opacity-35"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#222222] via-[#222222]/80 to-[#222222]/50" />
           </div>
 
           <div className="relative z-10 p-8 sm:p-14 lg:p-20 flex flex-col items-center text-center">
-            <span className="text-xs sm:text-sm text-[#cccccc] font-light tracking-wide">
+            <span className="text-xs sm:text-sm text-[#E8E8E8] font-light tracking-wide">
               {dealBanner.tag}
             </span>
             <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mt-4 max-w-2xl leading-tight">
               {dealBanner.title}
             </h3>
-            <p className="text-xs sm:text-sm text-[#bbbbbb] mt-4 max-w-lg leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#E8E8E8]/80 mt-4 max-w-lg leading-relaxed">
               {dealBanner.subtitle}
             </p>
             <div className="mt-8">

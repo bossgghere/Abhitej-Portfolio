@@ -1,21 +1,64 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   Aeonik Font Face Definitions (UI/UX Specification)
+   Searches for locally installed Aeonik / Aeonik TRIAL
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Aeonik';
+  src: local('Aeonik Regular'), local('Aeonik-Regular'), local('Aeonik TRIAL'), local('Aeonik TRIAL Regular'), local('Aeonik');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: local('Aeonik Medium'), local('Aeonik-Medium'), local('Aeonik TRIAL Medium');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: local('Aeonik Bold'), local('Aeonik-Bold'), local('Aeonik TRIAL Bold');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   Design Tokens (UI/UX Specification)
+   - Primary: #222222
+   - Secondary: #7B7B7B
+   - Tertiary: #F8F8F8
+   - White: #FFFFFF
+   ========================================================================== */
+
+:root {
+  --theme-primary: #222222;
+  --theme-secondary: #7B7B7B;
+  --theme-tertiary: #F8F8F8;
+  --theme-white: #FFFFFF;
+  --theme-border: #E8E8E8;
+}
+
 @layer base {
-  :root {
-    --bg-primary: #f9f9fa;
-    --text-primary: #121212;
-    --text-muted: #737373;
-    --border-subtle: #e5e5e7;
+  body {
+    background-color: var(--theme-tertiary);
+    color: var(--theme-primary);
+    font-family: 'Aeonik', 'Aeonik TRIAL', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
-  body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Aeonik', 'Aeonik TRIAL', 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: var(--theme-primary);
   }
 }
 
-/* Custom utility for vertical writing mode matching the reference design */
+/* Vertical text indicator utility */
 .writing-mode-vertical {
   writing-mode: vertical-rl;
   transform: rotate(180deg);

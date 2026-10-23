@@ -6,21 +6,19 @@ import { HeroScrollIndicator } from './HeroScrollIndicator';
 
 /**
  * HeroSection Component
- * Recreates the exact layout from the reference image:
- * - Stats at the top-left
- * - Prominent "Hello" heading and subtitle in the center-left
- * - "Scroll down" prompt at the bottom-left
- * - Clean portrait of the creator occupying the right side
+ * Recreates the exact layout from reference image with theme tokens:
+ * - Background: Tertiary (#F8F8F8)
+ * - Text: Primary (#222222) & Secondary (#7B7B7B)
  */
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-[calc(100vh-88px)] flex flex-col justify-between overflow-hidden">
+    <section className="relative min-h-[calc(100vh-88px)] flex flex-col justify-between overflow-hidden bg-[#F8F8F8]">
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 flex-1 flex flex-col justify-between pt-6 sm:pt-10 pb-8">
         
         {/* Main Grid: Left Content Column & Right Portrait Column */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center flex-1">
           
-          {/* Left Column (5 to 6 cols): Stats, Headline, Subtitle */}
+          {/* Left Column (6 cols): Stats, Headline, Subtitle */}
           <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-between h-full z-10 pt-4 pb-4">
             
             {/* Top Metric Stats */}
@@ -39,7 +37,7 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Column (6 to 7 cols): Portrait Image */}
+          {/* Right Column (6 cols): Portrait Image */}
           <div className="lg:col-span-6 xl:col-span-6 flex justify-end items-end h-full">
             <HeroPortrait />
           </div>

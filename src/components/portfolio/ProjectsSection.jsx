@@ -4,27 +4,26 @@ import { portfolioData } from '@/data';
 
 /**
  * ProjectsSection Component
- * Recreates the "Latest Works" showcase from "project section.jpeg":
- * - Centered "● Portfolio" pill and "Latest Works" heading
- * - 3-column project cards with rounded corners, client badges,
- *   and interactive preview overlay (active for the center project as shown in reference)
- * - "Check out More → View More" footer anchor
+ * Uses UI/UX Theme Specifications:
+ * - Background: Tertiary (#F8F8F8)
+ * - Typography: Aeonik
+ * - Colors: Primary (#222222), Secondary (#7B7B7B), White (#FFFFFF)
  */
 export const ProjectsSection = () => {
   const { badge, title, projects, viewMoreText, viewMoreLink } = portfolioData;
   const [activeHoverId, setActiveHoverId] = useState(2); // Card 2 active by default matching reference
 
   return (
-    <section id="portfolio" className="relative py-24 sm:py-32 px-6 sm:px-10 lg:px-14 border-t border-[#f0f0f2]">
+    <section id="portfolio" className="relative py-24 sm:py-32 px-6 sm:px-10 lg:px-14 border-t border-[#E8E8E8] bg-[#F8F8F8]">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f0f0f2] text-xs font-medium text-[#444444] mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-black" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8E8E8] text-xs font-medium text-[#222222] mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#222222]" />
             <span>{badge}</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#111111]">
+          <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#222222]">
             {title}
           </h2>
         </div>
@@ -41,7 +40,7 @@ export const ProjectsSection = () => {
                 className="group flex flex-col cursor-pointer"
               >
                 {/* Project Image Container */}
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-[#ececed] shadow-sm">
+                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-[#E8E8E8] shadow-sm">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -56,7 +55,7 @@ export const ProjectsSection = () => {
                     }`}
                   >
                     {/* Center Action Circle */}
-                    <div className="my-auto mx-auto w-14 h-14 rounded-full bg-[#181818]/90 text-white flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110">
+                    <div className="my-auto mx-auto w-14 h-14 rounded-full bg-[#222222]/90 text-white flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110">
                       <ArrowUpRight className="w-6 h-6" />
                     </div>
 
@@ -72,12 +71,12 @@ export const ProjectsSection = () => {
 
                 {/* Card Title & Client */}
                 <div className="mt-4 flex items-center justify-between">
-                  <h3 className="text-sm sm:text-base font-normal text-[#111111]">
+                  <h3 className="text-sm sm:text-base font-normal text-[#222222]">
                     {project.title}
                   </h3>
-                  <div className="flex items-center gap-1 text-xs text-[#777777]">
+                  <div className="flex items-center gap-1 text-xs text-[#7B7B7B]">
                     <span>For</span>
-                    <span className="font-semibold text-black tracking-tight flex items-center gap-0.5">
+                    <span className="font-semibold text-[#222222] tracking-tight flex items-center gap-0.5">
                       <span className="text-[10px]">⁝⁝</span> {project.client}
                     </span>
                   </div>
@@ -88,12 +87,12 @@ export const ProjectsSection = () => {
         </div>
 
         {/* View More Anchor */}
-        <div className="mt-14 flex items-center justify-center gap-2 text-xs sm:text-sm text-[#737373]">
+        <div className="mt-14 flex items-center justify-center gap-2 text-xs sm:text-sm text-[#7B7B7B]">
           <span>{viewMoreText}</span>
-          <ArrowRight className="w-4 h-4" />
+          <ArrowRight className="w-4 h-4 text-[#7B7B7B]" />
           <a
             href={viewMoreLink}
-            className="font-medium text-black hover:opacity-75 transition-opacity"
+            className="font-medium text-[#222222] hover:text-[#7B7B7B] transition-colors"
           >
             View More
           </a>
