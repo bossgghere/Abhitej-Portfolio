@@ -43,13 +43,4 @@ export const experienceData = {
       tags: ["Economics", "Finance"],
     },
   ],
-  dealBanner: {
-    tag: "(Open for High-Impact Roles & Consulting)",
-    title: "Need Data-Driven Financial & Business Analysis?",
-    subtitle:
-      "Available to discuss 401(k) plan administration, financial operations consulting, and business analytics initiatives.",
-    ctaText: "Get in touch",
-    ctaLink: "https://www.linkedin.com/in/abhitej-kumar-8b5b19286/",
-    bgImage: "/images/projects/deal-banner-bg.png",
-  },
 };

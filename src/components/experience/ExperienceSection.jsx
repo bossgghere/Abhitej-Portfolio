@@ -7,13 +7,11 @@ import { useInView } from '@/hooks/useInView';
  * ExperienceSection Component
  * Recreates the exact layout from reference screenshot "experience section.jpeg":
  * - "● Experiences" pill & "Explore My Professional Journey" header
- * - Divider rows with company, period, role, and pill tags
- * - Interactive expandable item (One Day Studio / Modern Agency) with 3 thumbnails & circular arrow
- * - Dark consultation offer banner with "Get in touch ↗"
+ * - Divided rows with company, period, role, and pill tags
+ * - Interactive expandable item (One Day Studio) with 3 thumbnails & circular arrow
  */
 export const ExperienceSection = () => {
-  const { badge, title, description, ctaText, ctaLink, experiences, dealBanner } =
-    experienceData;
+  const { badge, title, description, ctaText, ctaLink, experiences } = experienceData;
 
   const [expandedId, setExpandedId] = useState('one-day-studio');
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
@@ -151,43 +149,6 @@ export const ExperienceSection = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Consultation Banner */}
-        <div className="group mt-20 sm:mt-24 rounded-3xl overflow-hidden relative bg-[#222222] text-white shadow-xl hover:shadow-2xl transition-all duration-500">
-          {/* Background image & gradient overlay */}
-          <div className="absolute inset-0 z-0">
-            <img
-              src={dealBanner.bgImage}
-              alt="Consultation Background"
-              loading="lazy"
-              className="w-full h-full object-cover opacity-35 group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#222222] via-[#222222]/80 to-[#222222]/50" />
-          </div>
-
-          <div className="relative z-10 p-8 sm:p-14 lg:p-20 flex flex-col items-center text-center">
-            <span className="text-xs sm:text-sm text-[#E8E8E8] font-light tracking-wide">
-              {dealBanner.tag}
-            </span>
-            <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mt-4 max-w-2xl leading-tight">
-              {dealBanner.title}
-            </h3>
-            <p className="text-xs sm:text-sm text-[#E8E8E8]/80 mt-4 max-w-lg leading-relaxed">
-              {dealBanner.subtitle}
-            </p>
-            <div className="mt-8">
-              <a
-                href={dealBanner.ctaLink}
-                target="_blank"
-                rel="noreferrer"
-                className="group/btn inline-flex items-center gap-1.5 text-sm sm:text-base font-medium text-white border-b border-white pb-1 hover:text-gray-300 hover:border-gray-300 transition-colors"
-              >
-                <span>{dealBanner.ctaText}</span>
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
-              </a>
-            </div>
-          </div>
         </div>
 
       </div>
