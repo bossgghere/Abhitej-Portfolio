@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Award, Sparkle } from 'lucide-react';
+import { ArrowUpRight, Briefcase, Sparkle } from 'lucide-react';
 import { aboutData } from '@/data';
 import { useInView } from '@/hooks/useInView';
 
@@ -7,8 +7,9 @@ import { useInView } from '@/hooks/useInView';
  * AboutSection Component
  * Enhanced with smooth scroll-triggered entrance reveals & hover micro-interactions:
  * - Scroll reveal on viewport entry via useInView
- * - Hover card lift and shadow elevation on the Rising Star stat card
+ * - Hover card lift and shadow elevation on the Financial Analyst stat card
  * - Avatar hover zoom and sparkle rotate
+ * - "Rising Star Award" positioned at the end as supporting credential
  */
 export const AboutSection = () => {
   const { title, description, statCard, avatarCard, highlights } = aboutData;
@@ -63,12 +64,12 @@ export const AboutSection = () => {
             </div>
           </div>
 
-          {/* Column 2 (Center): White Stat Card with Rising Star and Portrait */}
+          {/* Column 2 (Center): White Stat Card with Financial Analyst and Portrait */}
           <div className="lg:col-span-4">
             <div className="group bg-[#FFFFFF] rounded-3xl p-7 sm:p-9 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-[#E8E8E8] flex flex-col justify-between cursor-default">
               <div>
                 <div className="w-12 h-12 rounded-full border border-[#E8E8E8] flex items-center justify-center text-[#222222] mb-6 group-hover:scale-110 group-hover:bg-[#F8F8F8] transition-all duration-300">
-                  <Award className="w-6 h-6 stroke-[1.5]" />
+                  <Briefcase className="w-6 h-6 stroke-[1.5]" />
                 </div>
                 <div className="text-3xl sm:text-4xl lg:text-[40px] font-normal tracking-tight text-[#222222] leading-tight">
                   {statCard.stat}
@@ -121,7 +122,7 @@ export const AboutSection = () => {
               </div>
             </div>
 
-            {/* Two Feature Highlights with Sparkle/Star Icons */}
+            {/* Feature Highlights with Sparkle Icons */}
             <div className="space-y-4 sm:space-y-5">
               {highlights.map((item) => (
                 <div key={item.id} className="group flex items-start gap-4">
@@ -129,6 +130,9 @@ export const AboutSection = () => {
                     <Sparkle className="w-4 h-4 fill-white" />
                   </div>
                   <p className="text-xs sm:text-sm text-[#7B7B7B] group-hover:text-[#222222] leading-relaxed transition-colors duration-200">
+                    {item.title && (
+                      <strong className="text-[#222222] font-medium">{item.title}: </strong>
+                    )}
                     {item.text}
                   </p>
                 </div>
