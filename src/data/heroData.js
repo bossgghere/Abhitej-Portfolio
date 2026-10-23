@@ -1,11 +1,6 @@
 export const heroData = {
   stats: [
     {
-      id: "award",
-      value: "Rising Star",
-      label: "Principal Financial Award",
-    },
-    {
       id: "experience",
       value: "1.5+",
       label: "Years at Principal",
