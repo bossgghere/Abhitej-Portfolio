@@ -1,0 +1,34 @@
+import React from 'react';
+import { ArrowDown } from 'lucide-react';
+import { heroData } from '@/data';
+
+/**
+ * HeroScrollIndicator Component
+ * Renders the bottom-left "Scroll down ↓" link with smooth scrolling
+ */
+export const HeroScrollIndicator = () => {
+  const { scrollIndicator } = heroData;
+
+  const handleScroll = (e) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(scrollIndicator.targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <a
+      href={`#${scrollIndicator.targetId}`}
+      onClick={handleScroll}
+      className="group inline-flex items-center gap-2 text-xs sm:text-sm font-normal text-[#444444] hover:text-black transition-colors duration-200 cursor-pointer"
+    >
+      <span>{scrollIndicator.text}</span>
+      <ArrowDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-y-1" />
+    </a>
+  );
+};
+
+export default HeroScrollIndicator;
