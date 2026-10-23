@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Cpu, Sparkle, TrendingUp } from 'lucide-react';
+import { ArrowUpRight, Cpu, Sparkle } from 'lucide-react';
 import { portfolioData } from '@/data';
 import { useInView } from '@/hooks/useInView';
 
@@ -100,46 +100,22 @@ export const ProjectsSection = () => {
                 </p>
               </div>
 
-              {/* Inset Model Performance Visual Box */}
-              <div className="mt-8 rounded-2xl p-5 bg-[#222222] text-white flex flex-col justify-between">
-                <div className="flex items-center justify-between pb-3 border-b border-white/10">
-                  <span className="text-xs font-medium text-white/90">Predictive Model Output</span>
-                  <span className="text-[10px] text-emerald-400 font-mono font-medium flex items-center gap-1">
-                    <TrendingUp className="w-3 h-3" />
-                    R² = 0.89
+              {/* Inset Research Scope Box */}
+              <div className="mt-8 rounded-2xl p-5 bg-[#F8F8F8] border border-[#E8E8E8] flex flex-col justify-between">
+                <div className="flex items-center justify-between pb-3 border-b border-[#E8E8E8]">
+                  <span className="text-xs font-medium text-[#222222]">Research Scope</span>
+                  <span className="text-[10px] text-[#222222] font-mono font-medium px-2 py-0.5 rounded bg-white border border-[#E8E8E8]">
+                    Academic Paper
                   </span>
                 </div>
-                
-                {/* Minimalist SVG Forecast Curve */}
-                <div className="py-3">
-                  <svg viewBox="0 0 240 60" className="w-full h-14 overflow-visible">
-                    <defs>
-                      <linearGradient id="projGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#10B981" stopOpacity="0.4" />
-                        <stop offset="100%" stopColor="#10B981" stopOpacity="0.0" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d="M 10 50 Q 50 45, 90 32 T 170 18 T 230 8 L 230 55 L 10 55 Z"
-                      fill="url(#projGrad)"
-                    />
-                    <path
-                      d="M 10 50 Q 50 45, 90 32 T 170 18 T 230 8"
-                      fill="none"
-                      stroke="#10B981"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                    <circle cx="10" cy="50" r="3" fill="#10B981" />
-                    <circle cx="90" cy="32" r="3" fill="#10B981" />
-                    <circle cx="170" cy="18" r="3" fill="#10B981" />
-                    <circle cx="230" cy="8" r="4" fill="#FFFFFF" stroke="#10B981" strokeWidth="2" />
-                  </svg>
+                <div className="mt-3 space-y-1.5 text-xs text-[#7B7B7B]">
+                  <div className="text-[#222222] font-normal">• Predictive Modeling & Player Forecasting</div>
+                  <div className="text-[#222222] font-normal">• Game Strategy & Tactical Optimization</div>
+                  <div className="text-[#222222] font-normal">• Visual Dashboards via Tableau & Seaborn</div>
                 </div>
-
-                <div className="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] text-white/60">
-                  <span>Python & Seaborn</span>
-                  <span className="text-white font-medium">Tableau Visuals</span>
+                <div className="mt-4 pt-3 border-t border-[#E8E8E8] flex items-center justify-between text-[11px] text-[#7B7B7B]">
+                  <span>Python & Machine Learning</span>
+                  <span className="font-medium text-[#222222]">Quantitative Analytics</span>
                 </div>
               </div>
             </div>
