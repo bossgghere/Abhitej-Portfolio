@@ -9,17 +9,17 @@ import { HeroScrollIndicator } from './HeroScrollIndicator';
  * Recreates the exact layout from reference image with theme tokens:
  * - Background: Tertiary (#F8F8F8)
  * - Text: Primary (#222222) & Secondary (#7B7B7B)
- * - Hero portrait seamlessly integrated with smooth bottom fade
+ * - Restored full height so portrait reaches naturally up toward top navbar
  */
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-[calc(100vh-88px)] flex flex-col justify-between overflow-hidden bg-[#F8F8F8]">
-      <div className="max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 flex-1 flex flex-col justify-between pt-4 sm:pt-6 pb-6 lg:pb-0">
+    <section className="relative min-h-[calc(100vh-80px)] flex flex-col justify-between overflow-hidden bg-[#F8F8F8]">
+      <div className="max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 flex-1 flex flex-col justify-between pt-2 sm:pt-4 pb-4 lg:pb-0">
         
         {/* Main Grid: Left Content Column & Right Portrait Column */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-end flex-1 min-h-[calc(100vh-120px)]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-end flex-1 min-h-[calc(100vh-100px)]">
           
-          {/* Left Column (5 to 6 cols): Stats, Headline, Subtitle, Scroll */}
+          {/* Left Column (Stats, Headline, Subtitle, Scroll) */}
           <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-between h-full z-10 pt-4 pb-8 lg:pb-12">
             
             {/* Top Metric Stats */}
