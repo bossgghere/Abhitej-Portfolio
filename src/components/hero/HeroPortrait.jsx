@@ -3,20 +3,20 @@ import { heroData } from '@/data';
 
 /**
  * HeroPortrait Component
- * Renders the designer's portrait image with high fetch priority for LCP optimization.
- * Can be swapped easily by changing heroData.portrait.src or dropping in a new image file.
+ * Displays the portrait prominently on the right side of the Hero section,
+ * matching the large presence and bottom alignment in the reference design.
  */
 export const HeroPortrait = () => {
   const { portrait } = heroData;
 
   return (
     <div className="relative w-full flex justify-center lg:justify-end items-end select-none pointer-events-none">
-      <div className="relative max-w-[500px] sm:max-w-[580px] lg:max-w-[700px] xl:max-w-[800px] w-full">
+      <div className="relative w-full max-w-[550px] sm:max-w-[660px] md:max-w-[740px] lg:max-w-[860px] xl:max-w-[1000px] 2xl:max-w-[1150px] flex items-end justify-center lg:justify-end">
         <img
           src={portrait.src}
           alt={portrait.alt}
           fetchpriority={portrait.fetchPriority || "high"}
-          className="w-full h-auto object-cover object-top grayscale contrast-[1.05] brightness-[1.02]"
+          className="w-full h-auto max-h-[75vh] sm:max-h-[82vh] lg:max-h-[88vh] xl:max-h-[92vh] object-contain object-bottom grayscale contrast-[1.06] brightness-[1.02] drop-shadow-sm transition-all duration-300"
         />
       </div>
     </div>
