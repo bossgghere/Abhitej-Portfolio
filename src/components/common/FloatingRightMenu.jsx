@@ -14,6 +14,7 @@ const navItems = [
  * Minimal and aesthetic persistent navigation on the right side:
  * - Floating vertical section scrollspy dots dock along the right edge
  * - Allows users to jump directly to any section while scrolling with real-time active indicators
+ * - Fully responsive: ultra-compact on mobile, expansive with tooltips on desktop
  */
 export const FloatingRightMenu = () => {
   const [activeSection, setActiveSection] = useState('hero');
@@ -67,7 +68,7 @@ export const FloatingRightMenu = () => {
   return (
     <nav
       aria-label="Quick section navigation"
-      className="fixed right-3 sm:right-6 top-1/2 -translate-y-1/2 z-40 flex flex-col items-center gap-2.5 sm:gap-3 py-3.5 sm:py-4 px-2 sm:px-2.5 rounded-full bg-white/90 backdrop-blur-md border border-[#E8E8E8] shadow-sm select-none"
+      className="fixed right-2 sm:right-6 top-1/2 -translate-y-1/2 z-40 flex flex-col items-center gap-2 sm:gap-3 py-2.5 sm:py-4 px-1.5 sm:px-2.5 rounded-full bg-white/90 backdrop-blur-md border border-[#E8E8E8] shadow-sm select-none"
     >
       {navItems.map((item) => {
         const isActive = activeSection === item.id;
@@ -89,8 +90,8 @@ export const FloatingRightMenu = () => {
             <div
               className={`transition-all duration-300 rounded-full ${
                 isActive
-                  ? 'w-2 h-5 bg-[#222222]'
-                  : 'w-2 h-2 bg-[#D4D4D4] group-hover:bg-[#7B7B7B]'
+                  ? 'w-1.5 sm:w-2 h-4 sm:h-5 bg-[#222222]'
+                  : 'w-1.5 sm:w-2 h-1.5 sm:h-2 bg-[#D4D4D4] group-hover:bg-[#7B7B7B]'
               }`}
             />
           </button>
