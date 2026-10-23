@@ -1,9 +1,9 @@
 export const heroData = {
   stats: [
     {
-      id: "accuracy",
-      value: "99.8%",
-      label: "Correction Accuracy",
+      id: "award",
+      value: "Rising Star",
+      label: "Principal Financial Award",
     },
     {
       id: "experience",

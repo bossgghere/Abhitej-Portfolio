@@ -1,46 +1,38 @@
 export const portfolioData = {
-  badge: "Portfolio",
-  title: "Key Projects & Initiatives",
-  viewMoreText: "Explore More on LinkedIn",
+  badge: "Projects",
+  title: "Featured Projects & Research",
+  description:
+    "Applied research and quantitative analytics projects combining predictive modeling, business intelligence, and financial data analysis.",
+  viewMoreText: "Connect to Discuss Projects",
   viewMoreLink: "https://www.linkedin.com/in/abhitej-kumar-8b5b19286/",
   projects: [
     {
-      id: 1,
+      id: "sports-ai",
       title: "Role of AI in Sports Analytics",
-      client: "Research Paper",
-      image: "/images/projects/project-3.png",
-      category: "Python, ML & Tableau",
-      url: "Predictive Analytics",
+      type: "Research Paper & Predictive Modeling",
+      category: "Python & Machine Learning",
       description:
-        "Investigated AI applications for athletic performance tracking, strategy optimization, and decision-making. Developed predictive models in Python and created visual dashboards with Matplotlib, Seaborn, and Tableau.",
+        "Investigated the application of artificial intelligence technologies for athletic performance tracking, strategy optimization, and decision-making in competitive sports.",
+      highlights: [
+        "Collected and preprocessed performance datasets to uncover actionable insights on player dynamics and game strategies.",
+        "Engineered predictive machine learning models in Python to forecast player trajectory and performance trends.",
+        "Designed comprehensive visualization dashboards using Matplotlib, Seaborn, and Tableau for executive presentation.",
+      ],
+      tags: ["Python", "Tableau", "Seaborn", "Predictive Modeling", "Matplotlib", "Data Analysis"],
     },
     {
-      id: 2,
+      id: "financial-dashboards",
       title: "Executive Financial Dashboards & Forecasting",
-      client: "Business Analytics",
-      image: "/images/projects/project-2.png",
-      category: "Power BI & Excel",
-      url: "Executive Reporting",
-      featured: true,
+      type: "Business Intelligence & Visualization",
+      category: "Power BI & Analytics",
       description:
-        "Designed impactful executive dashboards and visual reports in Excel and Power BI to analyze financial trends, track business performance, and drive strategic forecasting.",
-    },
-    {
-      id: 3,
-      title: "401(k) Plan Correction & Compliance",
-      client: "Principal Financial Group",
-      image: "/images/projects/project-1.png",
-      category: "Finance & ERISA",
-      url: "Retirement Operations",
-      description:
-        "Specialized operations in 401(k) plan correction, ERISA compliance, vesting audits, and complex beneficiary investment reallocations.",
+        "Engineered end-to-end data visualization dashboards and automated reporting suites to communicate complex financial insights to leadership.",
+      highlights: [
+        "Built dynamic executive dashboards in Power BI and advanced Excel to track key financial and operational metrics.",
+        "Analyzed large-scale financial datasets to identify historical trends, cost variances, and forecasting projections.",
+        "Presented data-driven recommendations that streamlined reporting cycles and improved operational decision-making.",
+      ],
+      tags: ["Power BI", "DAX", "MS Excel", "Financial Modeling", "Data Storytelling", "Dashboards"],
     },
   ],
-  visionBanner: {
-    title: "Looking for an Analytical Mind to Drive Impact?",
-    subtitle:
-      "I'm always excited to collaborate on data-driven business challenges, financial operations, and advanced analytics initiatives.",
-    ctaText: "Connect on LinkedIn",
-    ctaLink: "https://www.linkedin.com/in/abhitej-kumar-8b5b19286/",
-  },
 };

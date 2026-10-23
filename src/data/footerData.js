@@ -5,7 +5,6 @@ export const footerData = {
     { label: "Experience", href: "#services" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#portfolio" },
-    { label: "Insights", href: "#blog" },
     {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/abhitej-kumar-8b5b19286/",
