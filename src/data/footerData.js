@@ -5,6 +5,11 @@ export const footerData = {
     { label: "Portfolio", href: "#portfolio" },
     { label: "Services", href: "#services" },
     { label: "Blog", href: "#blog" },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/abhitej-kumar-8b5b19286/",
+      target: "_blank",
+    },
   ],
-  email: "hello@dnova.com",
+  email: "abhitej.design@gmail.com",
 };

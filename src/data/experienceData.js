@@ -2,9 +2,9 @@ export const experienceData = {
   badge: "Experiences",
   title: "Explore My Design Journey",
   description:
-    "Over the past 4+ years, I've had the opportunity to work on a wide range of design projects, collaborating with diverse teams and clients to bring creative visions to life.",
-  ctaText: "Book A Call",
-  ctaLink: "#contact",
+    "Over my design journey, I've had the opportunity to work on a wide range of product design initiatives, collaborating with diverse teams and clients to bring creative visions to life.",
+  ctaText: "Connect on LinkedIn",
+  ctaLink: "https://www.linkedin.com/in/abhitej-kumar-8b5b19286/",
   experiences: [
     {
       id: "creative-minds",
@@ -56,7 +56,7 @@ export const experienceData = {
     subtitle:
       "Take advantage of this limited-time offer to discuss your design needs with an experienced UI/UX and product designer.",
     ctaText: "Let's talk",
-    ctaLink: "#contact",
+    ctaLink: "https://www.linkedin.com/in/abhitej-kumar-8b5b19286/",
     bgImage: "/images/projects/deal-banner-bg.png",
   },
 };

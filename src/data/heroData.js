@@ -12,14 +12,14 @@ export const heroData = {
     },
   ],
   heading: "Hello",
-  subheading: "— It's Abhitej a design wizard",
+  subheading: "— It's Abhitej Kumar a design wizard",
   scrollIndicator: {
     text: "Scroll down",
     targetId: "about",
   },
   portrait: {
     src: "/images/abhitej-portrait.png",
-    alt: "Abhitej - Product Designer Portrait",
+    alt: "Abhitej Kumar - Product Designer Portrait",
     fetchPriority: "high",
   },
 };

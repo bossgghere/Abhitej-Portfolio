@@ -2,7 +2,7 @@ export const portfolioData = {
   badge: "Portfolio",
   title: "Latest Works",
   viewMoreText: "Check out More",
-  viewMoreLink: "#all-works",
+  viewMoreLink: "https://www.linkedin.com/in/abhitej-kumar-8b5b19286/",
   projects: [
     {
       id: 1,
@@ -35,6 +35,6 @@ export const portfolioData = {
     subtitle:
       "I'm always excited to collaborate on new and innovative projects. Whether you're starting from scratch or refining an existing idea",
     ctaText: "Book A Call",
-    ctaLink: "#contact",
+    ctaLink: "https://www.linkedin.com/in/abhitej-kumar-8b5b19286/",
   },
 };

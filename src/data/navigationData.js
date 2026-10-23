@@ -1,6 +1,6 @@
 export const navigationData = {
   logo: {
-    alt: "Portfolio Logo",
+    alt: "Abhitej Kumar Portfolio",
     href: "/",
   },
   navLinks: [
@@ -11,8 +11,8 @@ export const navigationData = {
   ],
   ctaButton: {
     label: "Book A Call",
-    href: "#contact",
+    href: "https://www.linkedin.com/in/abhitej-kumar-8b5b19286/",
     path: "/contact",
-    isExternal: false,
+    isExternal: true,
   },
 };
