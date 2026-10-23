@@ -138,51 +138,6 @@ export const AboutSection = () => {
           </div>
 
         </div>
-
-        {/* Continuous Marquee Ticker of Core Skills & Tools */}
-        <div className="mt-12 pt-6 border-t border-[#E8E8E8] overflow-hidden select-none">
-          <div className="animate-marquee items-center gap-8 text-xs font-medium tracking-wider text-[#7B7B7B] uppercase">
-            <span>Power BI & DAX</span>
-            <span>•</span>
-            <span>401(k) Retirement Operations</span>
-            <span>•</span>
-            <span>Tableau Visual Dashboards</span>
-            <span>•</span>
-            <span>Python Predictive Modeling</span>
-            <span>•</span>
-            <span>ERISA Regulatory Compliance</span>
-            <span>•</span>
-            <span>SQL Database Querying</span>
-            <span>•</span>
-            <span>Financial Accounting</span>
-            <span>•</span>
-            <span>Excel with Copilot AI</span>
-            <span>•</span>
-            <span>AI in Sports Analytics</span>
-            <span>•</span>
-            <span>Data Visualisation Dashboards</span>
-            <span>•</span>
-            <span>Power BI & DAX</span>
-            <span>•</span>
-            <span>401(k) Retirement Operations</span>
-            <span>•</span>
-            <span>Tableau Visual Dashboards</span>
-            <span>•</span>
-            <span>Python Predictive Modeling</span>
-            <span>•</span>
-            <span>ERISA Regulatory Compliance</span>
-            <span>•</span>
-            <span>SQL Database Querying</span>
-            <span>•</span>
-            <span>Financial Accounting</span>
-            <span>•</span>
-            <span>Excel with Copilot AI</span>
-            <span>•</span>
-            <span>AI in Sports Analytics</span>
-            <span>•</span>
-            <span>Data Visualisation Dashboards</span>
-          </div>
-        </div>
       </div>
     </section>
   );
