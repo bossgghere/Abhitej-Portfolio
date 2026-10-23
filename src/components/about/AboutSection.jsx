@@ -1,10 +1,10 @@
 import React from 'react';
-import { ArrowUpRight, Globe, Sparkle } from 'lucide-react';
+import { ArrowUpRight, Award, Globe, Sparkle } from 'lucide-react';
 import { aboutData } from '@/data';
 
 /**
  * AboutSection Component
- * Rebuilt with UI/UX Theme Specifications:
+ * Rebuilt with UI/UX Theme Specifications & Real Career Data:
  * - Background: Tertiary (#F8F8F8)
  * - Text: Primary (#222222) & Secondary (#7B7B7B)
  * - Card: White (#FFFFFF) with #E8E8E8 border
@@ -54,17 +54,17 @@ export const AboutSection = () => {
             </div>
           </div>
 
-          {/* Column 2 (Center): White Stat Card with 120% and Portrait */}
+          {/* Column 2 (Center): White Stat Card with Rising Star and Portrait */}
           <div className="lg:col-span-4">
             <div className="bg-[#FFFFFF] rounded-3xl p-7 sm:p-9 shadow-sm border border-[#E8E8E8] flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-full border border-[#E8E8E8] flex items-center justify-center text-[#222222] mb-6">
-                  <Globe className="w-6 h-6 stroke-[1.5]" />
+                  <Award className="w-6 h-6 stroke-[1.5]" />
                 </div>
-                <div className="text-5xl sm:text-6xl font-light tracking-tight text-[#222222] leading-none">
+                <div className="text-3xl sm:text-4xl lg:text-[40px] font-normal tracking-tight text-[#222222] leading-tight">
                   {statCard.stat}
                 </div>
-                <p className="mt-3 text-xs sm:text-sm text-[#7B7B7B] leading-relaxed max-w-[260px]">
+                <p className="mt-3 text-xs sm:text-sm text-[#7B7B7B] leading-relaxed max-w-[280px]">
                   {statCard.label}
                 </p>
               </div>
@@ -73,7 +73,7 @@ export const AboutSection = () => {
               <div className="mt-8 rounded-2xl overflow-hidden bg-[#F8F8F8] aspect-[4/4]">
                 <img
                   src={statCard.image}
-                  alt="Designer Portrait"
+                  alt="Abhitej Kumar Portrait"
                   loading="lazy"
                   className="w-full h-full object-cover object-top grayscale contrast-[1.05]"
                 />
@@ -89,14 +89,16 @@ export const AboutSection = () => {
               <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-3xl overflow-hidden bg-[#E8E8E8] shadow-sm group">
                 <img
                   src={avatarCard.image}
-                  alt="Avatar"
+                  alt="Abhitej Kumar"
                   loading="lazy"
                   className="w-full h-full object-cover object-top grayscale"
                 />
                 <a
                   href={avatarCard.link}
+                  target="_blank"
+                  rel="noreferrer"
                   className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                  aria-label="Contact Abhitej"
+                  aria-label="Connect with Abhitej Kumar"
                 >
                   <div className="w-10 h-10 rounded-full bg-[#FFFFFF] flex items-center justify-center text-[#222222] shadow-md">
                     <ArrowUpRight className="w-5 h-5" />

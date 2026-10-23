@@ -2,14 +2,16 @@ export const footerData = {
   links: [
     { label: "Home", href: "/", active: true },
     { label: "About Me", href: "#about" },
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Services", href: "#services" },
-    { label: "Blog", href: "#blog" },
+    { label: "Experience", href: "#services" },
+    { label: "Projects", href: "#portfolio" },
+    { label: "Insights", href: "#blog" },
     {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/abhitej-kumar-8b5b19286/",
       target: "_blank",
     },
   ],
-  email: "abhitej.design@gmail.com",
+  email: "abhitej3108@gmail.com",
+  phone: "+91 89781 55692",
+  location: "Hyderabad, Telangana, India",
 };

@@ -1,25 +1,25 @@
 export const heroData = {
   stats: [
     {
-      id: "projects",
-      value: "+200",
-      label: "Project completed",
+      id: "accuracy",
+      value: "99.8%",
+      label: "Correction Accuracy",
     },
     {
-      id: "startups",
-      value: "+50",
-      label: "Startup raised",
+      id: "experience",
+      value: "1.5+",
+      label: "Years at Principal",
     },
   ],
   heading: "Hello",
-  subheading: "— It's Abhitej Kumar a design wizard",
+  subheading: "— It's Abhitej Kumar, Financial & Business Analyst",
   scrollIndicator: {
     text: "Scroll down",
     targetId: "about",
   },
   portrait: {
     src: "/images/abhitej-portrait.png",
-    alt: "Abhitej Kumar - Product Designer Portrait",
+    alt: "Abhitej Kumar - Financial & Business Analyst",
     fetchPriority: "high",
   },
 };

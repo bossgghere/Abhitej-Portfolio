@@ -2,25 +2,25 @@ export const aboutData = {
   badge: "About Me",
   title: "About Me",
   description:
-    "I specialize in turning complex problems into elegant solutions. My approach blends creativity with strategic thinking to deliver designs that not only look great but work seamlessly. Ready to start your next project?",
+    "Business Analytics graduate and Financial Analyst at Principal Financial Group. I specialize in 401(k) retirement plan corrections, ERISA compliance, beneficiary operations, and turning complex financial datasets into actionable insights.",
   statCard: {
-    icon: "globe",
-    stat: "120%",
-    label: "Average increase in client engagement in the first 6 months",
-    image: "/images/about/center-portrait.png",
+    icon: "award",
+    stat: "Rising Star",
+    label: "Awarded for exceptional accuracy in 401(k) Plan Corrections at Principal Financial Group",
+    image: "/images/abhitej-portrait.png",
   },
   avatarCard: {
-    image: "/images/about/avatar-card.png",
+    image: "/images/abhitej-portrait.png",
     link: "https://www.linkedin.com/in/abhitej-kumar-8b5b19286/",
   },
   highlights: [
     {
       id: 1,
-      text: "With years of professional design experience, I specialize in creating intuitive, user-focused designs that solve real-world problems and deliver seamless digital experiences.",
+      text: "Hands-on expertise in ERISA compliance, plan discrepancy resolution, participant maintenance, and high-stakes beneficiary investment processing upon participant death.",
     },
     {
       id: 2,
-      text: "I thrive on working closely with clients, blending creativity with strategy to bring their vision to life through thoughtful, impactful design solutions.",
+      text: "Skilled in Business Analytics tools including Power BI, SQL, Tableau, MS Excel, and AI-driven Copilot analysis to optimize operations and support strategic decision-making.",
     },
   ],
 };

@@ -5,12 +5,12 @@ export const navigationData = {
   },
   navLinks: [
     { label: "About Me", href: "#about", path: "/about" },
-    { label: "Portfolio", href: "#portfolio", path: "/portfolio" },
-    { label: "Services", href: "#services", path: "/services" },
-    { label: "Blog", href: "#blog", path: "/blog" },
+    { label: "Experience", href: "#services", path: "/services" },
+    { label: "Projects", href: "#portfolio", path: "/portfolio" },
+    { label: "Insights", href: "#blog", path: "/blog" },
   ],
   ctaButton: {
-    label: "Book A Call",
+    label: "Connect on LinkedIn",
     href: "https://www.linkedin.com/in/abhitej-kumar-8b5b19286/",
     path: "/contact",
     isExternal: true,
