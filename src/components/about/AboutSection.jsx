@@ -91,7 +91,7 @@ export const AboutSection = () => {
           </div>
 
           {/* Column 3 (Right): Quick Avatar Card & Sparkle Bullet Points */}
-          <div className="lg:col-span-4 flex flex-col justify-between h-full space-y-8 lg:space-y-10">
+          <div className="lg:col-span-4 flex flex-col space-y-5 sm:space-y-6">
             
             {/* Top Avatar Card with Action Button */}
             <div className="flex justify-start lg:justify-end">
@@ -122,7 +122,7 @@ export const AboutSection = () => {
             </div>
 
             {/* Two Feature Highlights with Sparkle/Star Icons */}
-            <div className="space-y-8">
+            <div className="space-y-4 sm:space-y-5">
               {highlights.map((item) => (
                 <div key={item.id} className="group flex items-start gap-4">
                   <div className="shrink-0 w-8 h-8 rounded-full bg-[#222222] text-white flex items-center justify-center mt-0.5 group-hover:rotate-45 group-hover:bg-black transition-all duration-300">

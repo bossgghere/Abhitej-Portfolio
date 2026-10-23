@@ -118,7 +118,7 @@ export const ExperienceSection = () => {
           </div>
 
           {/* Column 3 (Right Card & Highlights - lg:col-span-4): Milestone Card & Sparkle Points */}
-          <div className="order-3 lg:order-3 lg:col-span-4 flex flex-col justify-between h-full space-y-8 lg:space-y-10">
+          <div className="order-3 lg:order-3 lg:col-span-4 flex flex-col space-y-5 sm:space-y-6">
             
             {/* Top Milestone Card with Action Button */}
             <div>
@@ -147,7 +147,7 @@ export const ExperienceSection = () => {
             </div>
 
             {/* Two Feature Highlights with Sparkle/Star Icons */}
-            <div className="space-y-6 sm:space-y-8">
+            <div className="space-y-4 sm:space-y-5">
               <div className="group flex items-start gap-4">
                 <div className="shrink-0 w-8 h-8 rounded-full bg-[#222222] text-white flex items-center justify-center mt-0.5 group-hover:rotate-45 group-hover:bg-black transition-all duration-300">
                   <Sparkle className="w-4 h-4 fill-white" />
