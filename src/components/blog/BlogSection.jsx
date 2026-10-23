@@ -16,7 +16,7 @@ export const BlogSection = () => {
     <section
       id="blog"
       ref={ref}
-      className="relative py-24 sm:py-32 px-6 sm:px-10 lg:px-14 border-t border-[#E8E8E8] bg-[#F8F8F8]"
+      className="relative py-14 sm:py-18 px-6 sm:px-10 lg:px-14 border-t border-[#E8E8E8] bg-[#F8F8F8]"
     >
       <div
         className={`max-w-7xl mx-auto transition-all duration-700 ${
@@ -24,7 +24,7 @@ export const BlogSection = () => {
         }`}
       >
         {/* Header */}
-        <div className="flex flex-col items-center text-center mb-16">
+        <div className="flex flex-col items-center text-center mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8E8E8] text-xs font-medium text-[#222222] mb-4 hover:bg-[#dedede] transition-colors">
             <span className="w-1.5 h-1.5 rounded-full bg-[#222222] animate-pulse" />
             <span>{badge}</span>
@@ -75,7 +75,7 @@ export const BlogSection = () => {
         </div>
 
         {/* Vision CTA Card */}
-        <div className="mt-20 sm:mt-28 rounded-3xl bg-[#EFEFEF] border border-[#E8E8E8] p-10 sm:p-16 lg:p-20 text-center flex flex-col items-center hover:shadow-lg transition-shadow duration-300">
+        <div className="mt-12 sm:mt-14 rounded-3xl bg-[#EFEFEF] border border-[#E8E8E8] p-8 sm:p-12 lg:p-14 text-center flex flex-col items-center hover:shadow-lg transition-shadow duration-300">
           <h3 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#222222] max-w-2xl leading-tight">
             {visionBanner.title}
           </h3>

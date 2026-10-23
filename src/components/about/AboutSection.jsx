@@ -18,7 +18,7 @@ export const AboutSection = () => {
     <section
       id="about"
       ref={ref}
-      className="relative py-24 sm:py-32 px-6 sm:px-10 lg:px-14 border-t border-[#E8E8E8] bg-[#F8F8F8]"
+      className="relative py-14 sm:py-18 px-6 sm:px-10 lg:px-14 border-t border-[#E8E8E8] bg-[#F8F8F8]"
     >
       <div className="max-w-7xl mx-auto">
         <div
@@ -38,7 +38,7 @@ export const AboutSection = () => {
             </div>
 
             {/* Directional curved arrow */}
-            <div className="hidden lg:block mt-20 pl-4 select-none pointer-events-none opacity-40 hover:opacity-70 transition-opacity">
+            <div className="hidden lg:block mt-10 pl-4 select-none pointer-events-none opacity-40 hover:opacity-70 transition-opacity">
               <svg
                 width="200"
                 height="140"
@@ -91,7 +91,7 @@ export const AboutSection = () => {
           </div>
 
           {/* Column 3 (Right): Quick Avatar Card & Sparkle Bullet Points */}
-          <div className="lg:col-span-4 flex flex-col justify-between h-full space-y-12 lg:space-y-16">
+          <div className="lg:col-span-4 flex flex-col justify-between h-full space-y-8 lg:space-y-10">
             
             {/* Top Avatar Card with Action Button */}
             <div className="flex justify-start lg:justify-end">
@@ -140,7 +140,7 @@ export const AboutSection = () => {
         </div>
 
         {/* Continuous Marquee Ticker of Core Skills & Tools */}
-        <div className="mt-20 pt-8 border-t border-[#E8E8E8] overflow-hidden select-none">
+        <div className="mt-12 pt-6 border-t border-[#E8E8E8] overflow-hidden select-none">
           <div className="animate-marquee items-center gap-8 text-xs font-medium tracking-wider text-[#7B7B7B] uppercase">
             <span>Power BI & DAX</span>
             <span>•</span>

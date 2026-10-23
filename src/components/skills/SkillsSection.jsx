@@ -18,7 +18,7 @@ export const SkillsSection = () => {
     <section
       id="skills"
       ref={ref}
-      className="relative py-16 sm:py-20 px-6 sm:px-10 lg:px-14 border-t border-[#E8E8E8] bg-[#F8F8F8]"
+      className="relative py-14 sm:py-18 px-6 sm:px-10 lg:px-14 border-t border-[#E8E8E8] bg-[#F8F8F8]"
     >
       <div
         className={`max-w-7xl mx-auto transition-all duration-700 ${
@@ -26,7 +26,7 @@ export const SkillsSection = () => {
         }`}
       >
         {/* Section Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start mb-10 sm:mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start mb-8 sm:mb-10">
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8E8E8] text-xs font-medium text-[#222222] mb-3 hover:bg-[#dedede] transition-colors">
               <span className="w-1.5 h-1.5 rounded-full bg-[#222222] animate-pulse" />

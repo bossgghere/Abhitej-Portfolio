@@ -16,7 +16,7 @@ export const ProjectsSection = () => {
     <section
       id="portfolio"
       ref={ref}
-      className="relative py-24 sm:py-32 px-6 sm:px-10 lg:px-14 border-t border-[#E8E8E8] bg-[#F8F8F8]"
+      className="relative py-14 sm:py-18 px-6 sm:px-10 lg:px-14 border-t border-[#E8E8E8] bg-[#F8F8F8]"
     >
       <div
         className={`max-w-7xl mx-auto transition-all duration-700 ${
@@ -24,7 +24,7 @@ export const ProjectsSection = () => {
         }`}
       >
         {/* Header */}
-        <div className="flex flex-col items-center text-center mb-16">
+        <div className="flex flex-col items-center text-center mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8E8E8] text-xs font-medium text-[#222222] mb-4 hover:bg-[#dedede] transition-colors">
             <span className="w-1.5 h-1.5 rounded-full bg-[#222222] animate-pulse" />
             <span>{badge}</span>
@@ -93,7 +93,7 @@ export const ProjectsSection = () => {
         </div>
 
         {/* View More Anchor */}
-        <div className="mt-14 flex items-center justify-center">
+        <div className="mt-10 flex items-center justify-center">
           <a
             href={viewMoreLink}
             target="_blank"
