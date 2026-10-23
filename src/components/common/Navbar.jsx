@@ -7,8 +7,7 @@ import { navigationData } from '@/data';
  * Uses UI/UX Theme tokens:
  * - Text: Primary (#222222), Secondary (#7B7B7B)
  * - Background: Tertiary (#F8F8F8)
- * - Harmonized spacing for the persistent FloatingRightMenu
- * - Clean editorial layout with logo completely removed
+ * - Clean editorial layout
  */
 export const Navbar = () => {
   const { navLinks, ctaButton } = navigationData;
@@ -30,8 +29,8 @@ export const Navbar = () => {
           ))}
         </nav>
 
-        {/* Right: CTA Button with dedicated breathing room for the persistent Floating Right Menu */}
-        <div className="flex items-center ml-auto mr-24 sm:mr-28">
+        {/* Right: CTA Button */}
+        <div className="flex items-center ml-auto">
           <a
             href={ctaButton.href}
             target="_blank"
