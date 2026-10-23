@@ -5,11 +5,11 @@ import { useInView } from '@/hooks/useInView';
 
 /**
  * ExperienceSection Component
- * Re-engineered to match the EXACT 3-column editorial layout and visual elements
- * of the beloved About section:
- * - Column 1: Title, narrative overview, and directional hand-drawn curved arrow
- * - Column 2: Signature white Hero Stat Card (Principal Financial Group) with inset operational box
- * - Column 3: Asymmetrical top milestone card with circular arrow button + sparkle bullet highlights
+ * Re-structured layout per user request:
+ * - Left Column: Principal Financial Group flagship Hero Card
+ * - Center Column: Headline ("Career & Experience"), narrative, curved arrow, and LinkedIn CTA
+ * - Right Column: Data Visualisation Internship card + Sparkle bullet highlights
+ * On mobile/tablet, the central text seamlessly orders first for natural hierarchy.
  */
 export const ExperienceSection = () => {
   const { ctaLink } = experienceData;
@@ -23,54 +23,13 @@ export const ExperienceSection = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div
-          className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start transition-all duration-700 ${
+          className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start transition-all duration-700 ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          {/* Column 1 (Left - 4 cols): Headline, Career Narrative & Hand-Drawn Curved Arrow */}
-          <div className="lg:col-span-4 flex flex-col justify-between h-full pt-2">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8E8E8] text-xs font-medium text-[#222222] mb-4 hover:bg-[#dedede] transition-colors">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#222222] animate-pulse" />
-                <span>Experience</span>
-              </div>
-              <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#222222] leading-tight">
-                Career & Experience
-              </h2>
-              <p className="mt-6 text-sm sm:text-base text-[#7B7B7B] leading-relaxed max-w-md">
-                Managing high-stakes 401(k) retirement operations and regulatory compliance at Principal Financial Group, with a foundation in business analytics and executive financial modeling.
-              </p>
-            </div>
-
-            {/* Directional curved arrow */}
-            <div className="hidden lg:block mt-10 pl-4 select-none pointer-events-none opacity-40 hover:opacity-70 transition-opacity">
-              <svg
-                width="200"
-                height="140"
-                viewBox="0 0 200 140"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M20 120 C 30 70, 90 25, 175 35"
-                  stroke="#7B7B7B"
-                  strokeWidth="5"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M150 15 L 180 35 L 160 65"
-                  stroke="#7B7B7B"
-                  strokeWidth="5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-          </div>
-
-          {/* Column 2 (Center - 4 cols): Signature White Hero Stat Card */}
-          <div className="lg:col-span-4">
-            <div className="group bg-[#FFFFFF] rounded-3xl p-7 sm:p-9 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-[#E8E8E8] flex flex-col justify-between cursor-default">
+          {/* Column 1 (Left Card - lg:col-span-4): Principal Financial Group Hero Card */}
+          <div className="order-2 lg:order-1 lg:col-span-4">
+            <div className="group bg-[#FFFFFF] rounded-3xl p-7 sm:p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-[#E8E8E8] flex flex-col justify-between cursor-default">
               <div>
                 <div className="w-12 h-12 rounded-full border border-[#E8E8E8] flex items-center justify-center text-[#222222] mb-6 group-hover:scale-110 group-hover:bg-[#F8F8F8] transition-all duration-300">
                   <Briefcase className="w-6 h-6 stroke-[1.5]" />
@@ -105,12 +64,65 @@ export const ExperienceSection = () => {
             </div>
           </div>
 
-          {/* Column 3 (Right - 4 cols): Milestone Card with Arrow & Sparkle Highlights */}
-          <div className="lg:col-span-4 flex flex-col justify-between h-full space-y-8 lg:space-y-10">
+          {/* Column 2 (Center Text - lg:col-span-4): Headline, Career Narrative & Hand-Drawn Arrow */}
+          <div className="order-1 lg:order-2 lg:col-span-4 flex flex-col justify-between h-full pt-2">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8E8E8] text-xs font-medium text-[#222222] mb-4 hover:bg-[#dedede] transition-colors">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#222222] animate-pulse" />
+                <span>Experience</span>
+              </div>
+              <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#222222] leading-tight">
+                Career & Experience
+              </h2>
+              <p className="mt-6 text-sm sm:text-base text-[#7B7B7B] leading-relaxed">
+                Managing high-stakes 401(k) retirement operations and regulatory compliance at Principal Financial Group, with a foundation in business analytics and executive financial modeling.
+              </p>
+
+              <div className="mt-6">
+                <a
+                  href={ctaLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex items-center gap-1.5 text-xs font-medium text-[#222222] border-b border-[#222222] pb-0.5 hover:text-[#7B7B7B] hover:border-[#7B7B7B] transition-colors"
+                >
+                  <span>Connect on LinkedIn</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Directional curved arrow pointing outward to connecting cards */}
+            <div className="hidden lg:block mt-12 pl-2 select-none pointer-events-none opacity-40 hover:opacity-70 transition-opacity">
+              <svg
+                width="200"
+                height="120"
+                viewBox="0 0 200 120"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 20 C 50 80, 140 100, 185 50"
+                  stroke="#7B7B7B"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M160 45 L 185 50 L 175 75"
+                  stroke="#7B7B7B"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+
+          {/* Column 3 (Right Card & Highlights - lg:col-span-4): Milestone Card & Sparkle Points */}
+          <div className="order-3 lg:order-3 lg:col-span-4 flex flex-col justify-between h-full space-y-8 lg:space-y-10">
             
             {/* Top Milestone Card with Action Button */}
-            <div className="flex justify-start lg:justify-end">
-              <div className="relative w-full sm:w-80 rounded-3xl p-6 bg-white border border-[#E8E8E8] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+            <div>
+              <div className="relative w-full rounded-3xl p-6 bg-white border border-[#E8E8E8] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[11px] font-mono uppercase tracking-wider text-[#7B7B7B]">
                     2024 — 2025
@@ -135,7 +147,7 @@ export const ExperienceSection = () => {
             </div>
 
             {/* Two Feature Highlights with Sparkle/Star Icons */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <div className="group flex items-start gap-4">
                 <div className="shrink-0 w-8 h-8 rounded-full bg-[#222222] text-white flex items-center justify-center mt-0.5 group-hover:rotate-45 group-hover:bg-black transition-all duration-300">
                   <Sparkle className="w-4 h-4 fill-white" />
