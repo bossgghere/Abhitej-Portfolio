@@ -8,7 +8,7 @@ export const achievementsData = {
       id: "rising-star",
       title: "Rising Star Award",
       organization: "Principal Financial Group",
-      timeline: "2023 – 2024",
+      timeline: "2026",
       tag: "Corporate Honor",
       icon: "award",
       description:
