@@ -5,7 +5,8 @@ const navItems = [
   { id: 'about', label: 'About Me', index: '01' },
   { id: 'services', label: 'Career & Experience', index: '02' },
   { id: 'portfolio', label: 'Research & Analytics', index: '03' },
-  { id: 'footer', label: 'Direct Contact', index: '04' },
+  { id: 'achievements', label: 'Key Achievements', index: '04' },
+  { id: 'footer', label: 'Direct Contact', index: '05' },
 ];
 
 /**

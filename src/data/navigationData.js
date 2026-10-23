@@ -3,6 +3,7 @@ export const navigationData = {
     { label: "About Me", href: "#about", path: "/about" },
     { label: "Experience", href: "#services", path: "/services" },
     { label: "Projects", href: "#portfolio", path: "/portfolio" },
+    { label: "Achievements", href: "#achievements", path: "/achievements" },
   ],
   ctaButton: {
     label: "Connect on LinkedIn",

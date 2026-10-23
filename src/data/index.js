@@ -6,4 +6,5 @@ export * from './aboutData';
 export * from './skillsData';
 export * from './experienceData';
 export * from './portfolioData';
+export * from './achievementsData';
 export * from './footerData';
