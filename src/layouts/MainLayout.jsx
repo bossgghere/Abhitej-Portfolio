@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Navbar } from '../components/common/Navbar';
+import { FloatingRightMenu } from '../components/common/FloatingRightMenu';
 
 /**
  * MainLayout Component
@@ -8,6 +9,7 @@ import { Navbar } from '../components/common/Navbar';
  * - Background: Tertiary (#F8F8F8)
  * - Text: Primary (#222222)
  * - Centered full-width flow
+ * - Persistent minimal right-side floating navigation
  */
 export const MainLayout = () => {
   return (
@@ -18,6 +20,7 @@ export const MainLayout = () => {
           <Outlet />
         </main>
       </div>
+      <FloatingRightMenu />
     </div>
   );
 };

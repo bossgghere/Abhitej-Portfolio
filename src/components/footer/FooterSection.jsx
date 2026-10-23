@@ -12,7 +12,7 @@ export const FooterSection = () => {
   const { links, email, phone, location } = footerData;
 
   return (
-    <footer className="relative bg-[#222222] text-white py-14 sm:py-16 px-6 sm:px-10 lg:px-14 overflow-hidden border-t border-[#333333]">
+    <footer id="footer" className="relative bg-[#222222] text-white py-14 sm:py-16 px-6 sm:px-10 lg:px-14 overflow-hidden border-t border-[#333333]">
       
       {/* Subtle architectural wireframe background accents */}
       <div className="absolute inset-0 pointer-events-none opacity-15">

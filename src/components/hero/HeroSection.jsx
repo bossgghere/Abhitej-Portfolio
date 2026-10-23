@@ -14,7 +14,7 @@ import { HeroScrollIndicator } from './HeroScrollIndicator';
  */
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-[calc(100vh-80px)] flex flex-col justify-between overflow-hidden bg-[#F8F8F8]">
+    <section id="hero" className="relative min-h-[calc(100vh-80px)] flex flex-col justify-between overflow-hidden bg-[#F8F8F8]">
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-14 flex-1 flex flex-col justify-between pt-2 sm:pt-4 pb-4 lg:pb-0">
         
         {/* Main Grid: Left Content Column & Right Portrait Column */}
